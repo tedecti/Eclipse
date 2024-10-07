@@ -1,0 +1,14 @@
+namespace Eclipse.Models;
+
+public class Message
+{
+    public Guid Id { get; set; }
+    public string? SenderId { get; set; }
+    public string? MessageText { get; set; }
+    public string? ReactionId { get; set; }
+    public string? ReplyId { get; set; }
+    public bool IsRead { get; set; }
+    public DateTime Timestamp { get; set; }
+    
+    public User Sender { get; set; }
+}

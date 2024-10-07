@@ -13,4 +13,9 @@ public class ChatRoom
     [Required]
     public string? MessageId { get; set; }
     public string? PinnedMessageId { get; set; }
+    
+    public User User1 { get; set; }
+    public User User2 { get; set; }
+    public Message Message { get; set; }
+    public Message PinnedMessage { get; set; }
 }
