@@ -1,0 +1,6 @@
+﻿services:
+  eclipse:
+    image: eclipse
+    build:
+      context: .
+      dockerfile: Eclipse/Dockerfile
