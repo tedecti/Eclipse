@@ -16,6 +16,6 @@ public class ChatRoom
     
     public User User1 { get; set; }
     public User User2 { get; set; }
-    public Message Message { get; set; }
+    public IEnumerable<Message> Messages { get; set; }
     public Message PinnedMessage { get; set; }
 }
