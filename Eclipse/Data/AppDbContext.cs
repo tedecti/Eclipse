@@ -56,9 +56,10 @@ public class AppDbContext : DbContext
         );
     }
 
-    public DbSet<User> Users = default!;
-    public DbSet<ChatRoom> ChatRooms = default!;
-    public DbSet<Conference> Conferences = default!;
-    public DbSet<ConferenceMember> ConferenceMembers = default!;
-    public DbSet<Message> Messages = default!;
+    public DbSet<User> Users { get; set; } = default!;
+    public DbSet<ChatRoom> ChatRooms { get; set; } = default!;
+    public DbSet<Conference> Conferences { get; set; } = default!;
+    public DbSet<ConferenceMember> ConferenceMembers { get; set; } = default!;
+    public DbSet<Message> Messages { get; set; } = default!;
+
 }

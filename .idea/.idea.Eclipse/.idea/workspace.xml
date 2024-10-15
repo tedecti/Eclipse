@@ -8,17 +8,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8470db5d-13fe-41a0-b26d-97bbfa0c93a3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Eclipse/Data/AutoMapper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Eclipse/Models/Dto/UserDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Eclipse/Repositories/AuthRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Eclipse/Repositories/Interfaces/IAuthRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Data/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Data/AppDbContext.cs" afterDir="false" />
+    <list default="true" id="8470db5d-13fe-41a0-b26d-97bbfa0c93a3" name="Changes" comment="50% commit">
+      <change afterPath="$PROJECT_DIR$/Eclipse/Models/Dto/RegisterDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Controllers/AuthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Data/AutoMapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Data/AutoMapper.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Eclipse/Eclipse.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Eclipse.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Models/ChatRoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Models/ChatRoom.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Models/ConferenceMember.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Models/ConferenceMember.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Models/Message.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Models/Message.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Models/User.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Eclipse/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Repositories/AuthRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Repositories/AuthRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Repositories/Interfaces/IAuthRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Repositories/Interfaces/IAuthRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Eclipse/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -176,7 +175,7 @@
       <workItem from="1728456820134" duration="51000" />
       <workItem from="1728457122238" duration="74000" />
       <workItem from="1728642930046" duration="5885000" />
-      <workItem from="1728973161947" duration="1869000" />
+      <workItem from="1728973161947" duration="3999000" />
     </task>
     <task id="LOCAL-00001" summary="Eclipse creation">
       <option name="closed" value="true" />
@@ -242,7 +241,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728647806154</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="50% commit">
+      <option name="closed" value="true" />
+      <created>1728975287561</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1728975287561</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,7 +268,8 @@
     <MESSAGE value="Npgsql package install" />
     <MESSAGE value="forgor" />
     <MESSAGE value="AppDbContext.cs for Db (no connection string)" />
-    <option name="LAST_COMMIT_MESSAGE" value="AppDbContext.cs for Db (no connection string)" />
+    <MESSAGE value="50% commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="50% commit" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

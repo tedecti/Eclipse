@@ -18,40 +18,26 @@ namespace Eclipse.Controllers
             _authRepository = authRepository;
             _configuration = configuration;
         }
-        
+
         [HttpPost]
         [Route("signup")]
-        public async Task<IActionResult> Register([FromBody] User user)
+        public async Task<IActionResult> Register([FromBody] RegisterDto registerDto)
         {
-            try
-            {
-                var newUser = await _authRepository.Register(user);
-                return Ok(newUser);
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e);
-            }
+            var newUser = await _authRepository.Register(registerDto);
+            return Ok(newUser);
         }
-        
+
         [HttpPost]
         [Route("signin")]
         public async Task<IActionResult> Login(UserDto userDto)
         {
-            try
+            var user = await _authRepository.Login(userDto);
+            if (user == null)
             {
-                var user = await _authRepository.Login(userDto);
-                if (user == null)
-                {
-                    return Unauthorized();
-                }
+                return Unauthorized();
+            }
 
-                return Ok(user);
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e);
-            }
+            return Ok(user);
         }
     }
 }

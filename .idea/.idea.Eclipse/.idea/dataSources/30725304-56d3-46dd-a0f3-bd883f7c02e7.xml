@@ -3,7 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.53">
     <root id="1">
       <DateStyle>mdy</DateStyle>
-      <IntrospectionStateNumber>746</IntrospectionStateNumber>
+      <IntrospectionStateNumber>758</IntrospectionStateNumber>
       <ServerVersion>16.4</ServerVersion>
       <StartupTime>1728973241</StartupTime>
       <TimeZones>true ACDT
@@ -1404,7 +1404,7 @@ true posixrules
 13212||10|C|G
 13212||-9223372036854775808|U|G
 13212||10|U|G</Grants>
-      <IntrospectionStateNumber>746</IntrospectionStateNumber>
+      <IntrospectionStateNumber>758</IntrospectionStateNumber>
       <ObjectId>16384</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -4823,471 +4823,451 @@ true posixrules
     <schema id="264" parent="3" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>746</IntrospectionStateNumber>
-      <LastIntrospectionLocalTimestamp>2024-10-15.06:40:53</LastIntrospectionLocalTimestamp>
+      <IntrospectionStateNumber>758</IntrospectionStateNumber>
+      <LastIntrospectionLocalTimestamp>2024-10-15.07:28:57</LastIntrospectionLocalTimestamp>
       <ObjectId>2200</ObjectId>
       <StateNumber>524</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
     </schema>
-    <table id="265" parent="264" name="ChatRoom">
-      <ObjectId>16423</ObjectId>
-      <StateNumber>745</StateNumber>
+    <table id="265" parent="264" name="ChatRooms">
+      <ObjectId>16507</ObjectId>
+      <StateNumber>757</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="266" parent="264" name="Conference">
-      <ObjectId>16394</ObjectId>
-      <StateNumber>745</StateNumber>
+    <table id="266" parent="264" name="ConferenceMembers">
+      <ObjectId>16492</ObjectId>
+      <StateNumber>757</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="267" parent="264" name="ConferenceMember">
-      <ObjectId>16408</ObjectId>
-      <StateNumber>745</StateNumber>
+    <table id="267" parent="264" name="Conferences">
+      <ObjectId>16478</ObjectId>
+      <StateNumber>757</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="268" parent="264" name="Message">
-      <ObjectId>16443</ObjectId>
-      <StateNumber>745</StateNumber>
+    <table id="268" parent="264" name="Messages">
+      <ObjectId>16522</ObjectId>
+      <StateNumber>757</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="269" parent="264" name="User">
-      <ObjectId>16401</ObjectId>
-      <StateNumber>745</StateNumber>
+    <table id="269" parent="264" name="Users">
+      <ObjectId>16485</ObjectId>
+      <StateNumber>757</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
     <table id="270" parent="264" name="__EFMigrationsHistory">
-      <ObjectId>16389</ObjectId>
-      <StateNumber>744</StateNumber>
+      <ObjectId>16473</ObjectId>
+      <StateNumber>756</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
     <column id="271" parent="265" name="Id">
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>745</StateNumber>
+      <StateNumber>757</StateNumber>
       <StoredType>uuid|0s</StoredType>
       <TypeId>2950</TypeId>
     </column>
     <column id="272" parent="265" name="UserId1">
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>745</StateNumber>
+      <StateNumber>757</StateNumber>
       <StoredType>uuid|0s</StoredType>
       <TypeId>2950</TypeId>
     </column>
     <column id="273" parent="265" name="UserId2">
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>745</StateNumber>
+      <StateNumber>757</StateNumber>
       <StoredType>uuid|0s</StoredType>
       <TypeId>2950</TypeId>
     </column>
     <column id="274" parent="265" name="MessageId">
       <NotNull>1</NotNull>
       <Position>4</Position>
-      <StateNumber>745</StateNumber>
+      <StateNumber>757</StateNumber>
       <StoredType>uuid|0s</StoredType>
       <TypeId>2950</TypeId>
     </column>
     <column id="275" parent="265" name="PinnedMessageId">
       <Position>5</Position>
-      <StateNumber>745</StateNumber>
+      <StateNumber>757</StateNumber>
       <StoredType>uuid|0s</StoredType>
       <TypeId>2950</TypeId>
     </column>
     <column id="276" parent="265" name="PinnedMessageId1">
       <NotNull>1</NotNull>
       <Position>6</Position>
-      <StateNumber>745</StateNumber>
+      <StateNumber>757</StateNumber>
       <StoredType>uuid|0s</StoredType>
       <TypeId>2950</TypeId>
     </column>
-    <column id="277" parent="265" name="UserId">
-      <Position>7</Position>
-      <StateNumber>745</StateNumber>
-      <StoredType>uuid|0s</StoredType>
-      <TypeId>2950</TypeId>
-    </column>
-    <foreign-key id="278" parent="265" name="FK_ChatRoom_User_UserId1">
+    <foreign-key id="277" parent="265" name="FK_ChatRooms_Users_UserId1">
       <ColNames>UserId1</ColNames>
-      <ObjectId>16433</ObjectId>
+      <ObjectId>16512</ObjectId>
       <OnDelete>restrict</OnDelete>
-      <StateNumber>745</StateNumber>
+      <StateNumber>757</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
-      <RefTableId>16401</RefTableId>
+      <RefTableId>16485</RefTableId>
     </foreign-key>
-    <foreign-key id="279" parent="265" name="FK_ChatRoom_User_UserId2">
+    <foreign-key id="278" parent="265" name="FK_ChatRooms_Users_UserId2">
       <ColNames>UserId2</ColNames>
-      <ObjectId>16438</ObjectId>
+      <ObjectId>16517</ObjectId>
       <OnDelete>restrict</OnDelete>
-      <StateNumber>745</StateNumber>
+      <StateNumber>757</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
-      <RefTableId>16401</RefTableId>
+      <RefTableId>16485</RefTableId>
     </foreign-key>
-    <foreign-key id="280" parent="265" name="FK_ChatRoom_Message_PinnedMessageId1">
+    <foreign-key id="279" parent="265" name="FK_ChatRooms_Messages_PinnedMessageId1">
       <ColNames>PinnedMessageId1</ColNames>
-      <ObjectId>16468</ObjectId>
+      <ObjectId>16546</ObjectId>
       <OnDelete>cascade</OnDelete>
-      <StateNumber>745</StateNumber>
+      <StateNumber>757</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
-      <RefTableId>16443</RefTableId>
+      <RefTableId>16522</RefTableId>
     </foreign-key>
-    <foreign-key id="281" parent="265" name="FK_ChatRoom_User_UserId">
-      <ColNames>UserId</ColNames>
-      <ObjectId>16428</ObjectId>
-      <StateNumber>745</StateNumber>
-      <RefKeyColPositions>1</RefKeyColPositions>
-      <RefTableId>16401</RefTableId>
-    </foreign-key>
-    <index id="282" parent="265" name="PK_ChatRoom">
+    <index id="280" parent="265" name="PK_ChatRooms">
       <ColNames>Id</ColNames>
-      <ObjectId>16426</ObjectId>
+      <ObjectId>16510</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>745</StateNumber>
+      <StateNumber>757</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="283" parent="265" name="IX_ChatRoom_UserId1">
+    <index id="281" parent="265" name="IX_ChatRooms_UserId1">
       <ColNames>UserId1</ColNames>
-      <ObjectId>16462</ObjectId>
-      <StateNumber>745</StateNumber>
+      <ObjectId>16540</ObjectId>
+      <StateNumber>757</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="284" parent="265" name="IX_ChatRoom_UserId2">
+    <index id="282" parent="265" name="IX_ChatRooms_UserId2">
       <ColNames>UserId2</ColNames>
-      <ObjectId>16463</ObjectId>
-      <StateNumber>745</StateNumber>
+      <ObjectId>16541</ObjectId>
+      <StateNumber>757</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="285" parent="265" name="IX_ChatRoom_PinnedMessageId1">
+    <index id="283" parent="265" name="IX_ChatRooms_PinnedMessageId1">
       <ColNames>PinnedMessageId1</ColNames>
-      <ObjectId>16460</ObjectId>
-      <StateNumber>745</StateNumber>
+      <ObjectId>16539</ObjectId>
+      <StateNumber>757</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="286" parent="265" name="IX_ChatRoom_UserId">
-      <ColNames>UserId</ColNames>
-      <ObjectId>16461</ObjectId>
-      <StateNumber>745</StateNumber>
-      <AccessMethodId>403</AccessMethodId>
-    </index>
-    <key id="287" parent="265" name="PK_ChatRoom">
-      <ObjectId>16427</ObjectId>
+    <key id="284" parent="265" name="PK_ChatRooms">
+      <ObjectId>16511</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>745</StateNumber>
-      <UnderlyingIndexId>16426</UnderlyingIndexId>
+      <StateNumber>757</StateNumber>
+      <UnderlyingIndexId>16510</UnderlyingIndexId>
     </key>
-    <column id="288" parent="266" name="Id">
+    <column id="285" parent="266" name="Id">
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>745</StateNumber>
+      <StateNumber>757</StateNumber>
       <StoredType>uuid|0s</StoredType>
       <TypeId>2950</TypeId>
     </column>
-    <column id="289" parent="266" name="Description">
+    <column id="286" parent="266" name="ConferenceId">
+      <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>745</StateNumber>
+      <StateNumber>757</StateNumber>
+      <StoredType>uuid|0s</StoredType>
+      <TypeId>2950</TypeId>
+    </column>
+    <column id="287" parent="266" name="MemberId">
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StateNumber>757</StateNumber>
+      <StoredType>uuid|0s</StoredType>
+      <TypeId>2950</TypeId>
+    </column>
+    <column id="288" parent="266" name="JoinedAt">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StateNumber>757</StateNumber>
+      <StoredType>timestamp with time zone|0s</StoredType>
+      <TypeId>1184</TypeId>
+    </column>
+    <column id="289" parent="266" name="IsAdmin">
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StateNumber>757</StateNumber>
+      <StoredType>boolean|0s</StoredType>
+      <TypeId>16</TypeId>
+    </column>
+    <foreign-key id="290" parent="266" name="FK_ConferenceMembers_Conferences_ConferenceId">
+      <ColNames>ConferenceId</ColNames>
+      <ObjectId>16497</ObjectId>
+      <StateNumber>757</StateNumber>
+      <RefKeyColPositions>1</RefKeyColPositions>
+      <RefTableId>16478</RefTableId>
+    </foreign-key>
+    <foreign-key id="291" parent="266" name="FK_ConferenceMembers_Users_MemberId">
+      <ColNames>MemberId</ColNames>
+      <ObjectId>16502</ObjectId>
+      <StateNumber>757</StateNumber>
+      <RefKeyColPositions>1</RefKeyColPositions>
+      <RefTableId>16485</RefTableId>
+    </foreign-key>
+    <index id="292" parent="266" name="PK_ConferenceMembers">
+      <ColNames>Id</ColNames>
+      <ObjectId>16495</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>757</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <index id="293" parent="266" name="IX_ConferenceMembers_ConferenceId">
+      <ColNames>ConferenceId</ColNames>
+      <ObjectId>16542</ObjectId>
+      <StateNumber>757</StateNumber>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <index id="294" parent="266" name="IX_ConferenceMembers_MemberId">
+      <ColNames>MemberId</ColNames>
+      <ObjectId>16543</ObjectId>
+      <StateNumber>757</StateNumber>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="295" parent="266" name="PK_ConferenceMembers">
+      <ObjectId>16496</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>757</StateNumber>
+      <UnderlyingIndexId>16495</UnderlyingIndexId>
+    </key>
+    <column id="296" parent="267" name="Id">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>757</StateNumber>
+      <StoredType>uuid|0s</StoredType>
+      <TypeId>2950</TypeId>
+    </column>
+    <column id="297" parent="267" name="Description">
+      <Position>2</Position>
+      <StateNumber>757</StateNumber>
       <StoredType>text|0s</StoredType>
       <TypeId>25</TypeId>
     </column>
-    <column id="290" parent="266" name="MemberCount">
+    <column id="298" parent="267" name="MemberCount">
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>745</StateNumber>
+      <StateNumber>757</StateNumber>
       <StoredType>integer|0s</StoredType>
       <TypeId>23</TypeId>
     </column>
-    <column id="291" parent="266" name="ConferencePicture">
+    <column id="299" parent="267" name="ConferencePicture">
       <Position>4</Position>
-      <StateNumber>745</StateNumber>
+      <StateNumber>757</StateNumber>
       <StoredType>text|0s</StoredType>
       <TypeId>25</TypeId>
     </column>
-    <index id="292" parent="266" name="PK_Conference">
+    <index id="300" parent="267" name="PK_Conferences">
       <ColNames>Id</ColNames>
-      <ObjectId>16399</ObjectId>
+      <ObjectId>16483</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>745</StateNumber>
+      <StateNumber>757</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="293" parent="266" name="PK_Conference">
-      <ObjectId>16400</ObjectId>
+    <key id="301" parent="267" name="PK_Conferences">
+      <ObjectId>16484</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>745</StateNumber>
-      <UnderlyingIndexId>16399</UnderlyingIndexId>
+      <StateNumber>757</StateNumber>
+      <UnderlyingIndexId>16483</UnderlyingIndexId>
     </key>
-    <column id="294" parent="267" name="Id">
+    <column id="302" parent="268" name="Id">
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>745</StateNumber>
+      <StateNumber>757</StateNumber>
       <StoredType>uuid|0s</StoredType>
       <TypeId>2950</TypeId>
     </column>
-    <column id="295" parent="267" name="ConferenceId">
+    <column id="303" parent="268" name="ChatRoomId">
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>745</StateNumber>
+      <StateNumber>757</StateNumber>
       <StoredType>uuid|0s</StoredType>
       <TypeId>2950</TypeId>
     </column>
-    <column id="296" parent="267" name="MemberId">
-      <NotNull>1</NotNull>
+    <column id="304" parent="268" name="SenderId">
       <Position>3</Position>
-      <StateNumber>745</StateNumber>
+      <StateNumber>757</StateNumber>
       <StoredType>uuid|0s</StoredType>
       <TypeId>2950</TypeId>
     </column>
-    <column id="297" parent="267" name="JoinedAt">
-      <NotNull>1</NotNull>
+    <column id="305" parent="268" name="MessageText">
       <Position>4</Position>
-      <StateNumber>745</StateNumber>
-      <StoredType>timestamp with time zone|0s</StoredType>
-      <TypeId>1184</TypeId>
+      <StateNumber>757</StateNumber>
+      <StoredType>text|0s</StoredType>
+      <TypeId>25</TypeId>
     </column>
-    <column id="298" parent="267" name="IsAdmin">
-      <NotNull>1</NotNull>
+    <column id="306" parent="268" name="ReactionId">
       <Position>5</Position>
-      <StateNumber>745</StateNumber>
+      <StateNumber>757</StateNumber>
+      <StoredType>text|0s</StoredType>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="307" parent="268" name="ReplyId">
+      <Position>6</Position>
+      <StateNumber>757</StateNumber>
+      <StoredType>text|0s</StoredType>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="308" parent="268" name="IsRead">
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+      <StateNumber>757</StateNumber>
       <StoredType>boolean|0s</StoredType>
       <TypeId>16</TypeId>
     </column>
-    <foreign-key id="299" parent="267" name="FK_ConferenceMember_Conference_ConferenceId">
-      <ColNames>ConferenceId</ColNames>
-      <ObjectId>16413</ObjectId>
-      <StateNumber>745</StateNumber>
-      <RefKeyColPositions>1</RefKeyColPositions>
-      <RefTableId>16394</RefTableId>
-    </foreign-key>
-    <foreign-key id="300" parent="267" name="FK_ConferenceMember_User_MemberId">
-      <ColNames>MemberId</ColNames>
-      <ObjectId>16418</ObjectId>
-      <StateNumber>745</StateNumber>
-      <RefKeyColPositions>1</RefKeyColPositions>
-      <RefTableId>16401</RefTableId>
-    </foreign-key>
-    <index id="301" parent="267" name="PK_ConferenceMember">
-      <ColNames>Id</ColNames>
-      <ObjectId>16411</ObjectId>
-      <Primary>1</Primary>
-      <StateNumber>745</StateNumber>
-      <Unique>1</Unique>
-      <AccessMethodId>403</AccessMethodId>
-    </index>
-    <index id="302" parent="267" name="IX_ConferenceMember_ConferenceId">
-      <ColNames>ConferenceId</ColNames>
-      <ObjectId>16464</ObjectId>
-      <StateNumber>745</StateNumber>
-      <AccessMethodId>403</AccessMethodId>
-    </index>
-    <index id="303" parent="267" name="IX_ConferenceMember_MemberId">
-      <ColNames>MemberId</ColNames>
-      <ObjectId>16465</ObjectId>
-      <StateNumber>745</StateNumber>
-      <AccessMethodId>403</AccessMethodId>
-    </index>
-    <key id="304" parent="267" name="PK_ConferenceMember">
-      <ObjectId>16412</ObjectId>
-      <Primary>1</Primary>
-      <StateNumber>745</StateNumber>
-      <UnderlyingIndexId>16411</UnderlyingIndexId>
-    </key>
-    <column id="305" parent="268" name="Id">
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StateNumber>745</StateNumber>
-      <StoredType>uuid|0s</StoredType>
-      <TypeId>2950</TypeId>
-    </column>
-    <column id="306" parent="268" name="ChatRoomId">
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StateNumber>745</StateNumber>
-      <StoredType>uuid|0s</StoredType>
-      <TypeId>2950</TypeId>
-    </column>
-    <column id="307" parent="268" name="SenderId">
-      <Position>3</Position>
-      <StateNumber>745</StateNumber>
-      <StoredType>uuid|0s</StoredType>
-      <TypeId>2950</TypeId>
-    </column>
-    <column id="308" parent="268" name="MessageText">
-      <Position>4</Position>
-      <StateNumber>745</StateNumber>
-      <StoredType>text|0s</StoredType>
-      <TypeId>25</TypeId>
-    </column>
-    <column id="309" parent="268" name="ReactionId">
-      <Position>5</Position>
-      <StateNumber>745</StateNumber>
-      <StoredType>text|0s</StoredType>
-      <TypeId>25</TypeId>
-    </column>
-    <column id="310" parent="268" name="ReplyId">
-      <Position>6</Position>
-      <StateNumber>745</StateNumber>
-      <StoredType>text|0s</StoredType>
-      <TypeId>25</TypeId>
-    </column>
-    <column id="311" parent="268" name="IsRead">
-      <NotNull>1</NotNull>
-      <Position>7</Position>
-      <StateNumber>745</StateNumber>
-      <StoredType>boolean|0s</StoredType>
-      <TypeId>16</TypeId>
-    </column>
-    <column id="312" parent="268" name="Timestamp">
+    <column id="309" parent="268" name="Timestamp">
       <NotNull>1</NotNull>
       <Position>8</Position>
-      <StateNumber>745</StateNumber>
+      <StateNumber>757</StateNumber>
       <StoredType>timestamp with time zone|0s</StoredType>
       <TypeId>1184</TypeId>
     </column>
-    <foreign-key id="313" parent="268" name="FK_Message_ChatRoom_ChatRoomId">
+    <foreign-key id="310" parent="268" name="FK_Messages_ChatRooms_ChatRoomId">
       <ColNames>ChatRoomId</ColNames>
-      <ObjectId>16450</ObjectId>
-      <StateNumber>745</StateNumber>
+      <ObjectId>16529</ObjectId>
+      <StateNumber>757</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
-      <RefTableId>16423</RefTableId>
+      <RefTableId>16507</RefTableId>
     </foreign-key>
-    <foreign-key id="314" parent="268" name="FK_Message_User_SenderId">
+    <foreign-key id="311" parent="268" name="FK_Messages_Users_SenderId">
       <ColNames>SenderId</ColNames>
-      <ObjectId>16455</ObjectId>
-      <StateNumber>745</StateNumber>
+      <ObjectId>16534</ObjectId>
+      <StateNumber>757</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
-      <RefTableId>16401</RefTableId>
+      <RefTableId>16485</RefTableId>
     </foreign-key>
-    <index id="315" parent="268" name="PK_Message">
+    <index id="312" parent="268" name="PK_Messages">
       <ColNames>Id</ColNames>
-      <ObjectId>16448</ObjectId>
+      <ObjectId>16527</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>745</StateNumber>
+      <StateNumber>757</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="316" parent="268" name="IX_Message_ChatRoomId">
+    <index id="313" parent="268" name="IX_Messages_ChatRoomId">
       <ColNames>ChatRoomId</ColNames>
-      <ObjectId>16466</ObjectId>
-      <StateNumber>745</StateNumber>
+      <ObjectId>16544</ObjectId>
+      <StateNumber>757</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="317" parent="268" name="IX_Message_SenderId">
+    <index id="314" parent="268" name="IX_Messages_SenderId">
       <ColNames>SenderId</ColNames>
-      <ObjectId>16467</ObjectId>
-      <StateNumber>745</StateNumber>
+      <ObjectId>16545</ObjectId>
+      <StateNumber>757</StateNumber>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="318" parent="268" name="PK_Message">
-      <ObjectId>16449</ObjectId>
+    <key id="315" parent="268" name="PK_Messages">
+      <ObjectId>16528</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>745</StateNumber>
-      <UnderlyingIndexId>16448</UnderlyingIndexId>
+      <StateNumber>757</StateNumber>
+      <UnderlyingIndexId>16527</UnderlyingIndexId>
     </key>
-    <column id="319" parent="269" name="Id">
+    <column id="316" parent="269" name="Id">
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>745</StateNumber>
+      <StateNumber>757</StateNumber>
       <StoredType>uuid|0s</StoredType>
       <TypeId>2950</TypeId>
     </column>
-    <column id="320" parent="269" name="Name">
+    <column id="317" parent="269" name="Name">
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>745</StateNumber>
+      <StateNumber>757</StateNumber>
       <StoredType>varchar(100)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="321" parent="269" name="Email">
+    <column id="318" parent="269" name="Email">
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>745</StateNumber>
+      <StateNumber>757</StateNumber>
       <StoredType>varchar(100)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="322" parent="269" name="Password">
+    <column id="319" parent="269" name="Password">
       <NotNull>1</NotNull>
       <Position>4</Position>
-      <StateNumber>745</StateNumber>
+      <StateNumber>757</StateNumber>
       <StoredType>text|0s</StoredType>
       <TypeId>25</TypeId>
     </column>
-    <column id="323" parent="269" name="Username">
+    <column id="320" parent="269" name="Username">
       <NotNull>1</NotNull>
       <Position>5</Position>
-      <StateNumber>745</StateNumber>
-      <StoredType>varchar(50)|0s</StoredType>
-      <TypeId>1043</TypeId>
+      <StateNumber>757</StateNumber>
+      <StoredType>text|0s</StoredType>
+      <TypeId>25</TypeId>
     </column>
-    <column id="324" parent="269" name="Phone">
+    <column id="321" parent="269" name="Phone">
       <NotNull>1</NotNull>
       <Position>6</Position>
-      <StateNumber>745</StateNumber>
+      <StateNumber>757</StateNumber>
       <StoredType>text|0s</StoredType>
       <TypeId>25</TypeId>
     </column>
-    <column id="325" parent="269" name="Pfp">
-      <NotNull>1</NotNull>
+    <column id="322" parent="269" name="Pfp">
       <Position>7</Position>
-      <StateNumber>745</StateNumber>
+      <StateNumber>757</StateNumber>
       <StoredType>text|0s</StoredType>
       <TypeId>25</TypeId>
     </column>
-    <column id="326" parent="269" name="RegisteredAt">
+    <column id="323" parent="269" name="RegisteredAt">
       <NotNull>1</NotNull>
       <Position>8</Position>
-      <StateNumber>745</StateNumber>
+      <StateNumber>757</StateNumber>
       <StoredType>timestamp with time zone|0s</StoredType>
       <TypeId>1184</TypeId>
     </column>
-    <index id="327" parent="269" name="PK_User">
+    <index id="324" parent="269" name="PK_Users">
       <ColNames>Id</ColNames>
-      <ObjectId>16406</ObjectId>
+      <ObjectId>16490</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>745</StateNumber>
+      <StateNumber>757</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="328" parent="269" name="PK_User">
-      <ObjectId>16407</ObjectId>
+    <key id="325" parent="269" name="PK_Users">
+      <ObjectId>16491</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>745</StateNumber>
-      <UnderlyingIndexId>16406</UnderlyingIndexId>
+      <StateNumber>757</StateNumber>
+      <UnderlyingIndexId>16490</UnderlyingIndexId>
     </key>
-    <column id="329" parent="270" name="MigrationId">
+    <column id="326" parent="270" name="MigrationId">
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>744</StateNumber>
+      <StateNumber>756</StateNumber>
       <StoredType>varchar(150)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="330" parent="270" name="ProductVersion">
+    <column id="327" parent="270" name="ProductVersion">
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>744</StateNumber>
+      <StateNumber>756</StateNumber>
       <StoredType>varchar(32)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <index id="331" parent="270" name="PK___EFMigrationsHistory">
+    <index id="328" parent="270" name="PK___EFMigrationsHistory">
       <ColNames>MigrationId</ColNames>
-      <ObjectId>16392</ObjectId>
+      <ObjectId>16476</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>744</StateNumber>
+      <StateNumber>756</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
       <CollationNames>default</CollationNames>
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <key id="332" parent="270" name="PK___EFMigrationsHistory">
-      <ObjectId>16393</ObjectId>
+    <key id="329" parent="270" name="PK___EFMigrationsHistory">
+      <ObjectId>16477</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>744</StateNumber>
-      <UnderlyingIndexId>16392</UnderlyingIndexId>
+      <StateNumber>756</StateNumber>
+      <UnderlyingIndexId>16476</UnderlyingIndexId>
     </key>
   </database-model>
 </dataSource>
