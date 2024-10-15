@@ -3,8 +3,8 @@ namespace Eclipse.Models;
 public class Message
 {
     public Guid Id { get; set; }
-    public string ChatRoomId { get; set; }
-    public string? SenderId { get; set; }
+    public Guid ChatRoomId { get; set; }
+    public Guid? SenderId { get; set; }
     public string? MessageText { get; set; }
     public string? ReactionId { get; set; }
     public string? ReplyId { get; set; }

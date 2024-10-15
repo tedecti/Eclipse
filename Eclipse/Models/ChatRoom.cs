@@ -7,12 +7,12 @@ public class ChatRoom
     [Key]
     public Guid Id { get; set; }
     [Required]
-    public string? UserId1 { get; set; }
+    public Guid? UserId1 { get; set; }
     [Required]
-    public string? UserId2 { get; set; }
+    public Guid? UserId2 { get; set; }
     [Required]
-    public string? MessageId { get; set; }
-    public string? PinnedMessageId { get; set; }
+    public Guid? MessageId { get; set; }
+    public Guid? PinnedMessageId { get; set; }
     
     public User User1 { get; set; }
     public User User2 { get; set; }

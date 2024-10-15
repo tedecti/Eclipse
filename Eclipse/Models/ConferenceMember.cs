@@ -7,9 +7,9 @@ public class ConferenceMember
     [Key]
     public Guid Id { get; set; }
     [Required]
-    public string? ConferenceId { get; set; }
+    public Guid? ConferenceId { get; set; }
     [Required]
-    public string? MemberId { get; set; }
+    public Guid? MemberId { get; set; }
     [Required]
     public DateTime JoinedAt { get; set; }
     [Required]

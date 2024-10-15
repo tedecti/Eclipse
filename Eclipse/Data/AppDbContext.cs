@@ -19,17 +19,17 @@ public class AppDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.ConfigureHasManyWithOne<User, ChatRoom>(
-            user => user.ChatRooms,
-            chatRoom => chatRoom.User1,
-            chatRoom => chatRoom.UserId1
-        );
+        modelBuilder.Entity<ChatRoom>()
+            .HasOne(c => c.User1)
+            .WithMany()
+            .HasForeignKey(c => c.UserId1)
+            .OnDelete(DeleteBehavior.Restrict);
 
-        modelBuilder.ConfigureHasManyWithOne<User, ChatRoom>(
-            user => user.ChatRooms,
-            chatRoom => chatRoom.User2,
-            chatRoom => chatRoom.UserId2
-        );
+        modelBuilder.Entity<ChatRoom>()
+            .HasOne(c => c.User2)
+            .WithMany()
+            .HasForeignKey(c => c.UserId2)
+            .OnDelete(DeleteBehavior.Restrict);
 
         modelBuilder.ConfigureHasManyWithOne<ChatRoom, Message>(
             chatRoom => chatRoom.Messages,
@@ -55,4 +55,10 @@ public class AppDbContext : DbContext
             conferenceMember => conferenceMember.MemberId
         );
     }
+
+    public DbSet<User> Users = default!;
+    public DbSet<ChatRoom> ChatRooms = default!;
+    public DbSet<Conference> Conferences = default!;
+    public DbSet<ConferenceMember> ConferenceMembers = default!;
+    public DbSet<Message> Messages = default!;
 }

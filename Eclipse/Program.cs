@@ -1,3 +1,5 @@
+using Eclipse.Data;
+
 namespace Eclipse;
 
 public class Program
@@ -5,7 +7,7 @@ public class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
-
+        builder.Services.AddDbContext<AppDbContext>();
         builder.Services.AddControllers();
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();

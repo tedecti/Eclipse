@@ -1,0 +1,13 @@
+using AutoMapper;
+using Eclipse.Models;
+using Eclipse.Models.Dto;
+
+namespace Eclipse.Data;
+
+public class AutoMapper : Profile
+{
+    public AutoMapper()
+    {
+        CreateMap<User, UserDto>();
+    }
+}
