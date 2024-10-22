@@ -1,3 +1,5 @@
+using Eclipse.Exceptions;
+using Eclipse.Middlewares;
 using Eclipse.Models;
 using Eclipse.Models.Dto;
 using Eclipse.Repositories.Interfaces;
@@ -21,23 +23,23 @@ namespace Eclipse.Controllers
 
         [HttpPost]
         [Route("signup")]
-        public async Task<IActionResult> Register([FromBody] RegisterDto registerDto)
+        public async Task<ApiResponse<User>> Register([FromBody] RegisterDto registerDto)
         {
             var newUser = await _authRepository.Register(registerDto);
-            return Ok(newUser);
+            return new ApiResponse<User> {Message = "Success", Data = newUser};
         }
 
         [HttpPost]
         [Route("signin")]
-        public async Task<IActionResult> Login(UserDto userDto)
+        public async Task<ApiResponse<UserDto>> Login(UserDto userDto)
         {
             var user = await _authRepository.Login(userDto);
             if (user == null)
             {
-                return Unauthorized();
+                throw new NotFoundException("User not found");
             }
 
-            return Ok(user);
+            return new ApiResponse<UserDto> {Message = "Success", Data = userDto};
         }
     }
 }

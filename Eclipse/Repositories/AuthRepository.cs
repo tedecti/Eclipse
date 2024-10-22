@@ -26,10 +26,12 @@ public class AuthRepository : IAuthRepository
 
     public async Task<User> Register(RegisterDto registerDto)
     {
-        if (string.IsNullOrEmpty(registerDto.Password) || string.IsNullOrEmpty(registerDto.Email))
-        {
-            throw new ArgumentException("Email and Password cannot be empty");
-        }
+        if (string.IsNullOrEmpty(registerDto.Email)) 
+            throw new ArgumentNullException(nameof(registerDto.Email), "Email cannot be null or empty");
+        if (string.IsNullOrEmpty(registerDto.Password)) 
+            throw new ArgumentNullException(nameof(registerDto.Password), "Password cannot be null or empty");
+        if (await _context.Users.AnyAsync(u => u.Email == registerDto.Email))
+            throw new InvalidOperationException("User with the same email already exists");
 
         var hashedPassword = BCrypt.Net.BCrypt.HashPassword(registerDto.Password, 12);
         var newUser = new User
@@ -43,7 +45,6 @@ public class AuthRepository : IAuthRepository
             RegisteredAt = DateTime.UtcNow,
             Pfp = ""
         };
-        Console.WriteLine(newUser.Email);
         _context.Users.Add(newUser); 
         await _context.SaveChangesAsync();
 
