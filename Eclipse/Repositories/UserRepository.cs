@@ -15,9 +15,15 @@ public class UserRepository : IUserRepository
         _context = context;
     }
 
-    public async Task<User?> GetUser(Guid id)
+    public async Task<User?> GetUserById(Guid id)
     {
         var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
+        return user;
+    }
+
+    public async Task<User?> GetUserByEmail(string email)
+    {
+        var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
         return user;
     }
 
