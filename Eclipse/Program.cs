@@ -1,5 +1,6 @@
 using System.Text;
 using Eclipse.Data;
+using Eclipse.Middlewares;
 using Eclipse.Repositories;
 using Eclipse.Repositories.Interfaces;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -52,6 +53,7 @@ public class Program
 
         app.UseAuthorization();
 
+        app.UseMiddleware<ErrorHandlingMiddleware>();
 
         app.MapControllers();
 
