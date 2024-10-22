@@ -54,6 +54,16 @@ public class AppDbContext : DbContext
             user => user.ConferenceMembers,
             conferenceMember => conferenceMember.MemberId
         );
+        modelBuilder.ConfigureHasOneWithMany<User, Contact>(
+            contact => contact.ContactUser,
+            user => user.Contacts,
+            contact => contact.UserId,
+            DeleteBehavior.Restrict);
+        modelBuilder.ConfigureHasOneWithMany<User, Contact>(
+            contact => contact.ContactUser,
+            user => user.Contacts,
+            contact => contact.ContactUserId,
+            DeleteBehavior.Restrict);
     }
 
     public DbSet<User> Users { get; set; } = default!;
@@ -61,5 +71,5 @@ public class AppDbContext : DbContext
     public DbSet<Conference> Conferences { get; set; } = default!;
     public DbSet<ConferenceMember> ConferenceMembers { get; set; } = default!;
     public DbSet<Message> Messages { get; set; } = default!;
-
+    public DbSet<Contact> Contacts { get; set; } = default!;
 }
