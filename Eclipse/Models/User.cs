@@ -20,8 +20,9 @@ public class User
     public string? Pfp { get; set; }
     [DataType(DataType.DateTime)]
     public DateTime RegisteredAt { get; set; }
-    public List<ChatRoom> ChatRooms = new List<ChatRoom>();
-    public List<Message> Messages = new List<Message>();
-    public List<ConferenceMember> ConferenceMembers = new List<ConferenceMember>();
+    public ICollection<ChatRoom> ChatRooms = new List<ChatRoom>();
+    public ICollection<Message> Messages = new List<Message>();
+    public ICollection<ConferenceMember> ConferenceMembers = new List<ConferenceMember>();
+    public ICollection<Contact> Contacts = new List<Contact>();
 
 }
