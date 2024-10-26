@@ -69,6 +69,32 @@ namespace Eclipse.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Contacts",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    UserId = table.Column<Guid>(type: "uuid", nullable: false),
+                    ContactUserId = table.Column<Guid>(type: "uuid", nullable: false),
+                    AddedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Contacts", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Contacts_Users_ContactUserId",
+                        column: x => x.ContactUserId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Contacts_Users_UserId",
+                        column: x => x.UserId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ChatRooms",
                 columns: table => new
                 {
@@ -150,6 +176,16 @@ namespace Eclipse.Migrations
                 column: "MemberId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Contacts_ContactUserId",
+                table: "Contacts",
+                column: "ContactUserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Contacts_UserId",
+                table: "Contacts",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Messages_ChatRoomId",
                 table: "Messages",
                 column: "ChatRoomId");
@@ -177,6 +213,9 @@ namespace Eclipse.Migrations
 
             migrationBuilder.DropTable(
                 name: "ConferenceMembers");
+
+            migrationBuilder.DropTable(
+                name: "Contacts");
 
             migrationBuilder.DropTable(
                 name: "Conferences");

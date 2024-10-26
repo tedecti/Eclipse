@@ -20,20 +20,26 @@ public class ErrorHandlingMiddleware
         catch (NotFoundException ex)
         {
             context.Response.StatusCode = StatusCodes.Status404NotFound;
-            await context.Response.WriteAsJsonAsync(new ApiResponse<object> { Message = ex.Message, Data = Array.Empty<object>()});
+            await context.Response.WriteAsJsonAsync(new ApiResponse<object>
+                { Message = ex.Message, Data = Array.Empty<object>() });
         }
         catch (UnauthorizedAccessException)
         {
             context.Response.StatusCode = StatusCodes.Status401Unauthorized;
             await context.Response.WriteAsJsonAsync(new ApiResponse<object>
-                { Message = "Unauthorized access.", Data = Array.Empty<object>()});
+                { Message = "Unauthorized access", Data = Array.Empty<object>() });
         }
-
+        catch (AlreadyExistsException ex)
+        {
+            context.Response.StatusCode = StatusCodes.Status400BadRequest;
+            await context.Response.WriteAsJsonAsync(new ApiResponse<object>
+                { Message = ex.Message, Data = Array.Empty<object>() });
+        }
         catch (Exception)
         {
             context.Response.StatusCode = StatusCodes.Status500InternalServerError;
             await context.Response.WriteAsJsonAsync(new ApiResponse<object>
-                { Message = "An error occurred while processing your request.", Data = Array.Empty<object>()});
+                { Message = "An error occurred while processing your request", Data = Array.Empty<object>()});
         }
     }
 }

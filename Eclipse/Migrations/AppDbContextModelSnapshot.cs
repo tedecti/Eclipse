@@ -107,6 +107,30 @@ namespace Eclipse.Migrations
                     b.ToTable("ConferenceMembers");
                 });
 
+            modelBuilder.Entity("Eclipse.Models.Contact", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("AddedDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("ContactUserId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ContactUserId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Contacts");
+                });
+
             modelBuilder.Entity("Eclipse.Models.Message", b =>
                 {
                     b.Property<Guid>("Id")
@@ -228,6 +252,25 @@ namespace Eclipse.Migrations
                     b.Navigation("Member");
                 });
 
+            modelBuilder.Entity("Eclipse.Models.Contact", b =>
+                {
+                    b.HasOne("Eclipse.Models.User", "ContactUser")
+                        .WithMany("Contacts")
+                        .HasForeignKey("ContactUserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Eclipse.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ContactUser");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Eclipse.Models.Message", b =>
                 {
                     b.HasOne("Eclipse.Models.ChatRoom", "ChatRoom")
@@ -259,6 +302,8 @@ namespace Eclipse.Migrations
             modelBuilder.Entity("Eclipse.Models.User", b =>
                 {
                     b.Navigation("ConferenceMembers");
+
+                    b.Navigation("Contacts");
 
                     b.Navigation("Messages");
                 });

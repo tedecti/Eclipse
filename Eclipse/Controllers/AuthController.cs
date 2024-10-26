@@ -28,9 +28,9 @@ namespace Eclipse.Controllers
         public async Task<ApiResponse<User>> Register([FromBody] RegisterDto registerDto)
         {
             var existUser = _userRepository.GetUserByEmail(registerDto.Email);
-            if (existUser != null)
+            if (existUser.Result != null)
             {
-                throw new AlreadyExistingException("User already exists");
+                throw new AlreadyExistsException("User");
             }
             var newUser = await _authRepository.Register(registerDto);
             return new ApiResponse<User> {Message = "Success", Data = newUser};
@@ -43,7 +43,7 @@ namespace Eclipse.Controllers
             var user = await _authRepository.Login(userDto);
             if (user == null)
             {
-                throw new NotFoundException("User not found");
+                throw new NotFoundException("User");
             }
 
             return new ApiResponse<UserDto> {Message = "Success", Data = userDto};
