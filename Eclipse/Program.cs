@@ -20,6 +20,7 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
         builder.Services.AddDbContext<AppDbContext>(options =>
             options.UseNpgsql(builder.Configuration.GetConnectionString("Npgsql")));
+        builder.Services.AddScoped<IFileRepository, FileRepository>();
         builder.Services.AddScoped<IAuthRepository, AuthRepository>();
         builder.Services.AddScoped<IUserRepository, UserRepository>();
         builder.Services.AddScoped<IUserService, UserService>();
