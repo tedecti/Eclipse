@@ -36,15 +36,14 @@ namespace Eclipse.Controllers
 
         [HttpPost]
         [Route("signin")]
-        public async Task<ApiResponse<UserDto>> Login(UserDto userDto)
+        public async Task<ApiResponse<object>> Login(UserDto userDto)
         {
-            var user = await _authRepository.Login(userDto);
-            if (user == null)
+            var token = await _authRepository.Login(userDto);
+            if (token == null)
             {
                 throw new NotFoundException("User");
             }
-
-            return new ApiResponse<UserDto> {Message = "Success", Data = userDto};
+            return new ApiResponse<object> {Message = "Success", Data = new { token }};
         }
     }
 }

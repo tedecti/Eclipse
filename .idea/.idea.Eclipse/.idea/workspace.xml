@@ -9,18 +9,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8470db5d-13fe-41a0-b26d-97bbfa0c93a3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Eclipse/Exceptions/AlreadyExistsException.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7/storage_v2/_src_/database/railway.Hf4GOg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7/storage_v2/_src_/database/railway.Hf4GOg/schema/public.abK9xQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eclipse/Config/MinioStorageConfig.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eclipse/Models/Dto/UserProfileDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eclipse/Repositories/FileRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eclipse/Repositories/Interfaces/IFileRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eclipse/Services/Interfaces/IUserService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eclipse/Services/UserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/projectSettingsUpdater.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse.sln.DotSettings.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Eclipse/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Controllers/AuthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Data/AutoMapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Data/AutoMapper.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Eclipse/Eclipse.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Eclipse.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Exceptions/AlreadyExistingException.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Exceptions/NotFoundException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Exceptions/NotFoundException.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Eclipse/Middlewares/ErrorHandlingMiddleware.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Middlewares/ErrorHandlingMiddleware.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Migrations/20241015072815_Initial.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Migrations/20241015072815_Initial.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Repositories/AuthRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Repositories/AuthRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Repositories/Interfaces/IUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Repositories/Interfaces/IUserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Repositories/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Repositories/UserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +54,7 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/06c046bf69aa4f768c77e50706275b1b26a820/29/8545072a/DbContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c87d74c82824421bb59de7f19d0486bdc2d800/8e/271a5f0a/UnauthorizedAccessException.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Eclipse/Models/User.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -63,7 +71,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Launch Settings Profile.Eclipse: http.executor": "Debug",
+    ".NET Launch Settings Profile.Eclipse: http.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "node.js.detected.package.eslint": "true",
@@ -184,6 +192,10 @@
       <workItem from="1729585877113" duration="1785000" />
       <workItem from="1729592459722" duration="6043000" />
       <workItem from="1729679019655" duration="1290000" />
+      <workItem from="1729956944253" duration="175000" />
+      <workItem from="1730087900217" duration="2658000" />
+      <workItem from="1730103761160" duration="3998000" />
+      <workItem from="1730114132510" duration="5183000" />
     </task>
     <task id="LOCAL-00001" summary="Eclipse creation">
       <option name="closed" value="true" />
@@ -353,7 +365,23 @@
       <option name="project" value="LOCAL" />
       <updated>1729595045096</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="all new edits for clone repo">
+      <option name="closed" value="true" />
+      <created>1729957008554</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1729957008554</updated>
+    </task>
+    <task id="LOCAL-00023" summary="REFACTORING">
+      <option name="closed" value="true" />
+      <created>1730088957834</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1730088957834</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -362,7 +390,6 @@
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
-    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Eclipse creation" />
     <MESSAGE value="Models" />
@@ -385,7 +412,9 @@
     <MESSAGE value="New Exception" />
     <MESSAGE value="Contact info" />
     <MESSAGE value="Contact relations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Contact relations" />
+    <MESSAGE value="all new edits for clone repo" />
+    <MESSAGE value="REFACTORING" />
+    <option name="LAST_COMMIT_MESSAGE" value="REFACTORING" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

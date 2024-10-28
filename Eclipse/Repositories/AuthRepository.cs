@@ -69,7 +69,7 @@ public class AuthRepository : IAuthRepository
 
     public string GenerateJwtToken(User user)
     {
-        var jsonKey = _configuration.GetValue<string>("SecretKey");
+        var jsonKey = _configuration.GetValue<string>("ApiSettings:Secret");
         if (string.IsNullOrEmpty(jsonKey))
         {
             _logger.LogError("SecretKey is missing or empty in configuration.");
@@ -81,8 +81,12 @@ public class AuthRepository : IAuthRepository
 
         var tokenDescriptor = new SecurityTokenDescriptor
         {
-            Subject = new ClaimsIdentity(new[]
-                { new Claim("id", user.Id.ToString()) }),
+            Subject = new ClaimsIdentity(new Claim[]
+            {
+                new Claim("UserId", user.Id.ToString()),
+                new Claim(ClaimTypes.Email, user.Email),
+                new Claim(ClaimTypes.Name, user.Username)
+            }),
             Expires = DateTime.UtcNow.AddDays(7),
             SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key),
                 SecurityAlgorithms.HmacSha256Signature)
