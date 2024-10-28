@@ -14,12 +14,10 @@ namespace Eclipse.Controllers
     {
         private readonly IAuthRepository _authRepository;
         private readonly IUserRepository _userRepository;
-        private readonly IConfiguration _configuration;
 
-        public AuthController(IAuthRepository authRepository, IConfiguration configuration, IUserRepository userRepository)
+        public AuthController(IAuthRepository authRepository, IUserRepository userRepository)
         {
             _authRepository = authRepository;
-            _configuration = configuration;
             _userRepository = userRepository;
         }
 
