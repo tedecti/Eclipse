@@ -8,26 +8,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8470db5d-13fe-41a0-b26d-97bbfa0c93a3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Eclipse/Config/MinioStorageConfig.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Eclipse/Models/Dto/UserProfileDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Eclipse/Repositories/FileRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Eclipse/Repositories/Interfaces/IFileRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Eclipse/Services/Interfaces/IUserService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Eclipse/Services/UserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/projectSettingsUpdater.xml" afterDir="false" />
+    <list default="true" id="8470db5d-13fe-41a0-b26d-97bbfa0c93a3" name="Changes" comment="idk????">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Controllers/AuthController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Data/AutoMapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Data/AutoMapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Eclipse.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Eclipse.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Controllers/FileController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Controllers/FileController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Controllers/UserController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Eclipse/Middlewares/ErrorHandlingMiddleware.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Middlewares/ErrorHandlingMiddleware.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Eclipse/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Repositories/AuthRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Repositories/AuthRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Repositories/Interfaces/IUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Repositories/Interfaces/IUserRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Repositories/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Repositories/UserRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +41,15 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/06c046bf69aa4f768c77e50706275b1b26a820/29/8545072a/DbContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c87d74c82824421bb59de7f19d0486bdc2d800/8e/271a5f0a/UnauthorizedAccessException.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Controllers/AuthController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Data/AutoMapper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Middlewares/ErrorHandlingMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Eclipse/Models/User.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Repositories/AuthRepository.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Repositories/Interfaces/IUserRepository.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Repositories/UserRepository.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/appsettings.json" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -195,7 +189,7 @@
       <workItem from="1729956944253" duration="175000" />
       <workItem from="1730087900217" duration="2658000" />
       <workItem from="1730103761160" duration="3998000" />
-      <workItem from="1730114132510" duration="5183000" />
+      <workItem from="1730114132510" duration="6048000" />
     </task>
     <task id="LOCAL-00001" summary="Eclipse creation">
       <option name="closed" value="true" />
@@ -381,7 +375,71 @@
       <option name="project" value="LOCAL" />
       <updated>1730088957834</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="UserProfileDto">
+      <option name="closed" value="true" />
+      <created>1730119381728</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1730119381729</updated>
+    </task>
+    <task id="LOCAL-00025" summary="UserService">
+      <option name="closed" value="true" />
+      <created>1730119406289</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1730119406289</updated>
+    </task>
+    <task id="LOCAL-00026" summary="some security fixes + minio storage">
+      <option name="closed" value="true" />
+      <created>1730119453434</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1730119453434</updated>
+    </task>
+    <task id="LOCAL-00027" summary="FileRepository">
+      <option name="closed" value="true" />
+      <created>1730119468039</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1730119468039</updated>
+    </task>
+    <task id="LOCAL-00028" summary="UserRepository">
+      <option name="closed" value="true" />
+      <created>1730119475043</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1730119475043</updated>
+    </task>
+    <task id="LOCAL-00029" summary="UserController">
+      <option name="closed" value="true" />
+      <created>1730119481105</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1730119481105</updated>
+    </task>
+    <task id="LOCAL-00030" summary="FileController">
+      <option name="closed" value="true" />
+      <created>1730119487218</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1730119487218</updated>
+    </task>
+    <task id="LOCAL-00031" summary="idk????">
+      <option name="closed" value="true" />
+      <created>1730119498411</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1730119498411</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -391,12 +449,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Eclipse creation" />
-    <MESSAGE value="Models" />
-    <MESSAGE value="docker compose" />
-    <MESSAGE value="models update" />
-    <MESSAGE value="MBE" />
-    <MESSAGE value="Npgsql package install" />
     <MESSAGE value="forgor" />
     <MESSAGE value="AppDbContext.cs for Db (no connection string)" />
     <MESSAGE value="50% commit" />
@@ -414,7 +466,15 @@
     <MESSAGE value="Contact relations" />
     <MESSAGE value="all new edits for clone repo" />
     <MESSAGE value="REFACTORING" />
-    <option name="LAST_COMMIT_MESSAGE" value="REFACTORING" />
+    <MESSAGE value="UserProfileDto" />
+    <MESSAGE value="UserService" />
+    <MESSAGE value="some security fixes + minio storage" />
+    <MESSAGE value="FileRepository" />
+    <MESSAGE value="UserRepository" />
+    <MESSAGE value="UserController" />
+    <MESSAGE value="FileController" />
+    <MESSAGE value="idk????" />
+    <option name="LAST_COMMIT_MESSAGE" value="idk????" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
