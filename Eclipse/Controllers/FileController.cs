@@ -7,7 +7,7 @@ using SixLabors.ImageSharp.Processing;
 
 namespace Eclipse.Controllers
 {
-    [Route("api/[controller]/{fileName}")]
+    [Route("api/file/{fileName}")]
     [ApiController]
     public class FileController : ControllerBase
     {
