@@ -44,8 +44,21 @@ namespace Eclipse.Controllers
             return new ApiResponse<UserProfileDto> { Message = "Success", Data = user };
         }
 
+        [HttpGet]
+        [Route("user/{userId:guid}")]
+        public async Task<ApiResponse<UserProfileDto>> GetUserById(Guid userId)
+        {
+            var user = await _userService.GetUserMapped(userId);
+            if (user == null)
+            {
+                throw new NotFoundException("User");
+            }
+
+            return new ApiResponse<UserProfileDto> { Message = "Success", Data = user };
+        }
+        
         [Authorize]
-        [HttpPost("upload")]
+        [HttpPost("/pfp/upload")]
         public async Task<ApiResponse<object>> UploadAvatar()
         {
             var httpRequest = HttpContext.Request;
@@ -65,19 +78,6 @@ namespace Eclipse.Controllers
             var fileName = await _fileRepository.SaveFile(file);
             await _userRepository.UploadAvatar(userId, fileName);
             return new ApiResponse<object> { Message = "Success", Data = fileName };
-        }
-
-        [HttpGet]
-        [Route("user/{userId:guid}")]
-        public async Task<ApiResponse<UserProfileDto>> GetUserById(Guid userId)
-        {
-            var user = await _userService.GetUserMapped(userId);
-            if (user == null)
-            {
-                throw new NotFoundException("User");
-            }
-
-            return new ApiResponse<UserProfileDto> { Message = "Success", Data = user };
         }
     }
 }
