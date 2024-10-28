@@ -35,11 +35,11 @@ public class ErrorHandlingMiddleware
             await context.Response.WriteAsJsonAsync(new ApiResponse<object>
                 { Message = ex.Message, Data = Array.Empty<object>() });
         }
-        catch (Exception)
-        {
-            context.Response.StatusCode = StatusCodes.Status500InternalServerError;
-            await context.Response.WriteAsJsonAsync(new ApiResponse<object>
-                { Message = "An error occurred while processing your request", Data = Array.Empty<object>()});
-        }
+        // catch (Exception)
+        // {
+        //     context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+        //     await context.Response.WriteAsJsonAsync(new ApiResponse<object>
+        //         { Message = "An error occurred while processing your request", Data = Array.Empty<object>()});
+        // }
     }
 }
