@@ -32,4 +32,11 @@ public class UserRepository : IUserRepository
         var users = await _context.Users.ToListAsync();
         return users;
     }
+    public async Task<User> UploadAvatar(Guid userId, string fileName)
+    {
+        var user = await GetUserById(userId);
+        user.Pfp = fileName;
+        await _context.SaveChangesAsync();
+        return user;
+    }
 }
