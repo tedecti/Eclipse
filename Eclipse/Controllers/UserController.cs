@@ -58,7 +58,7 @@ namespace Eclipse.Controllers
         }
         
         [Authorize]
-        [HttpPost("/pfp/upload")]
+        [HttpPost("pfp/upload")]
         public async Task<ApiResponse<object>> UploadAvatar()
         {
             var httpRequest = HttpContext.Request;
