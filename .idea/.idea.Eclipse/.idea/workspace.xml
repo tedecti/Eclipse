@@ -8,11 +8,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8470db5d-13fe-41a0-b26d-97bbfa0c93a3" name="Changes" comment="idk????">
+    <list default="true" id="8470db5d-13fe-41a0-b26d-97bbfa0c93a3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Controllers/FileController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Controllers/FileController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Controllers/UserController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Middlewares/ErrorHandlingMiddleware.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Middlewares/ErrorHandlingMiddleware.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Eclipse/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +39,11 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/06c046bf69aa4f768c77e50706275b1b26a820/29/8545072a/DbContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c87d74c82824421bb59de7f19d0486bdc2d800/8e/271a5f0a/UnauthorizedAccessException.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Controllers/AuthController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Controllers/FileController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Controllers/UserController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Data/AutoMapper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Middlewares/ErrorHandlingMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Middlewares/ErrorHandlingMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Middlewares/ErrorHandlingMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Eclipse/Models/User.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Program.cs" root0="SKIP_HIGHLIGHTING" />
@@ -63,25 +64,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.Eclipse: http.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.Eclipse: http.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Eclipse: http">
     <configuration name="Eclipse: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Eclipse/Eclipse.csproj" />
@@ -189,7 +190,8 @@
       <workItem from="1729956944253" duration="175000" />
       <workItem from="1730087900217" duration="2658000" />
       <workItem from="1730103761160" duration="3998000" />
-      <workItem from="1730114132510" duration="6048000" />
+      <workItem from="1730114132510" duration="6300000" />
+      <workItem from="1730177687182" duration="98000" />
     </task>
     <task id="LOCAL-00001" summary="Eclipse creation">
       <option name="closed" value="true" />
@@ -439,7 +441,47 @@
       <option name="project" value="LOCAL" />
       <updated>1730119498411</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="FileController DI fix">
+      <option name="closed" value="true" />
+      <created>1730120225526</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1730120225526</updated>
+    </task>
+    <task id="LOCAL-00033" summary="changed route">
+      <option name="closed" value="true" />
+      <created>1730120240811</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1730120240811</updated>
+    </task>
+    <task id="LOCAL-00034" summary="changed route (/api/file)">
+      <option name="closed" value="true" />
+      <created>1730120257402</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1730120257402</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Temporary removed unknown exception handler">
+      <option name="closed" value="true" />
+      <created>1730120288539</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1730120288539</updated>
+    </task>
+    <task id="LOCAL-00036" summary="workspace">
+      <option name="closed" value="true" />
+      <created>1730120298231</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1730120298231</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -449,11 +491,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="forgor" />
-    <MESSAGE value="AppDbContext.cs for Db (no connection string)" />
-    <MESSAGE value="50% commit" />
-    <MESSAGE value="final" />
-    <MESSAGE value="Response for front" />
     <MESSAGE value="ErrorHandlingMiddleware + Custom Ex" />
     <MESSAGE value="using middleware" />
     <MESSAGE value="using responses" />
@@ -474,7 +511,12 @@
     <MESSAGE value="UserController" />
     <MESSAGE value="FileController" />
     <MESSAGE value="idk????" />
-    <option name="LAST_COMMIT_MESSAGE" value="idk????" />
+    <MESSAGE value="FileController DI fix" />
+    <MESSAGE value="changed route" />
+    <MESSAGE value="changed route (/api/file)" />
+    <MESSAGE value="Temporary removed unknown exception handler" />
+    <MESSAGE value="workspace" />
+    <option name="LAST_COMMIT_MESSAGE" value="workspace" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -75,6 +75,13 @@ public class Program
                 { jwtSecurityScheme, Array.Empty<string>() }
             });
         });
+        builder.Services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+        {
+            builder.WithOrigins("http://localhost:3000")
+                .AllowAnyMethod()
+                .AllowCredentials()
+                .AllowAnyHeader();
+        }));
         var app = builder.Build();
 
         if (app.Environment.IsDevelopment())
@@ -89,7 +96,7 @@ public class Program
         app.UseAuthorization();
 
         app.UseMiddleware<ErrorHandlingMiddleware>();
-
+        app.UseCors("MyPolicy");
         app.MapControllers();
 
         app.Run();
