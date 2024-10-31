@@ -56,6 +56,15 @@ namespace Eclipse.Controllers
 
             return new ApiResponse<UserProfileDto> { Message = "Success", Data = user };
         }
+
+        [Authorize]
+        [HttpPut]
+        [Route("user/update/{userId:guid}")]
+        public async Task<ApiResponse<User>> UpdateUserById(Guid userId, UserProfileDto userProfileDto)
+        {
+            var newUser = await _userRepository.UpdateUser(userId, userProfileDto);
+            return new ApiResponse<User> { Message = "Success", Data = newUser };
+        }
         
         [Authorize]
         [HttpPost("pfp/upload")]

@@ -32,6 +32,22 @@ public class UserRepository : IUserRepository
         var users = await _context.Users.ToListAsync();
         return users;
     }
+
+    public async Task<User?> UpdateUser(Guid userId, UserProfileDto userProfileDto)
+    {
+        var updatedUser = await _context.Users
+            .Where(u => userId == u.Id)
+            .ExecuteUpdateAsync(
+                s =>
+                    s.SetProperty(u => u.Email, userProfileDto.Email)
+                        .SetProperty(u => u.Phone, userProfileDto.Phone)
+                        .SetProperty(u => u.Pfp, userProfileDto.Pfp)
+                        .SetProperty(u => u.Name, userProfileDto.Name)
+                        .SetProperty(u => u.Username, userProfileDto.Username));
+        var user = await GetUserById(userId);
+        return user;
+    }
+
     public async Task<User> UploadAvatar(Guid userId, string fileName)
     {
         var user = await GetUserById(userId);
