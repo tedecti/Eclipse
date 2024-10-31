@@ -63,6 +63,10 @@ namespace Eclipse.Controllers
         public async Task<ApiResponse<User>> UpdateUserById(Guid userId, UserProfileDto userProfileDto)
         {
             var newUser = await _userRepository.UpdateUser(userId, userProfileDto);
+            if (newUser == null)
+            {
+                throw new Exception();
+            }
             return new ApiResponse<User> { Message = "Success", Data = newUser };
         }
         

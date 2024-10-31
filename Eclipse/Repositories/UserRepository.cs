@@ -44,6 +44,12 @@ public class UserRepository : IUserRepository
                         .SetProperty(u => u.Pfp, userProfileDto.Pfp)
                         .SetProperty(u => u.Name, userProfileDto.Name)
                         .SetProperty(u => u.Username, userProfileDto.Username));
+        
+        if (updatedUser != 1)
+        {
+            return null;
+        }
+
         var user = await GetUserById(userId);
         return user;
     }
