@@ -10,7 +10,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8470db5d-13fe-41a0-b26d-97bbfa0c93a3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Controllers/UserController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,20 +38,14 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/06c046bf69aa4f768c77e50706275b1b26a820/29/8545072a/DbContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/96b22701ce3542d68e66b33c1ae9a14f1e6620/51/902dfd20/RelationalQueryableExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c87d74c82824421bb59de7f19d0486bdc2d800/8e/271a5f0a/UnauthorizedAccessException.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Controllers/AuthController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Controllers/FileController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Controllers/UserController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Data/AutoMapper.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Middlewares/ErrorHandlingMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Middlewares/ErrorHandlingMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Middlewares/ErrorHandlingMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Controllers/UserController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Eclipse/Models/User.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Program.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Repositories/AuthRepository.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Repositories/Interfaces/IUserRepository.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Repositories/UserRepository.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/appsettings.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Repositories/UserRepository.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -74,7 +69,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MonitoringPageId&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -191,7 +186,12 @@
       <workItem from="1730087900217" duration="2658000" />
       <workItem from="1730103761160" duration="3998000" />
       <workItem from="1730114132510" duration="6300000" />
-      <workItem from="1730177687182" duration="98000" />
+      <workItem from="1730177687182" duration="135000" />
+      <workItem from="1730264729105" duration="2020000" />
+      <workItem from="1730289974830" duration="2686000" />
+      <workItem from="1730357907299" duration="2858000" />
+      <workItem from="1730372230305" duration="240000" />
+      <workItem from="1730452880254" duration="3488000" />
     </task>
     <task id="LOCAL-00001" summary="Eclipse creation">
       <option name="closed" value="true" />
@@ -481,7 +481,31 @@
       <option name="project" value="LOCAL" />
       <updated>1730120298231</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="CORS Policy">
+      <option name="closed" value="true" />
+      <created>1730177798934</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1730177798934</updated>
+    </task>
+    <task id="LOCAL-00038" summary="User Edit through ExecuteUpdate">
+      <option name="closed" value="true" />
+      <created>1730360454776</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1730360454776</updated>
+    </task>
+    <task id="LOCAL-00039" summary="temp exception thrower">
+      <option name="closed" value="true" />
+      <created>1730360739210</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1730360739210</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -491,9 +515,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="ErrorHandlingMiddleware + Custom Ex" />
-    <MESSAGE value="using middleware" />
-    <MESSAGE value="using responses" />
     <MESSAGE value="migration" />
     <MESSAGE value="User Info Output" />
     <MESSAGE value="GetUserByEmail" />
@@ -516,7 +537,10 @@
     <MESSAGE value="changed route (/api/file)" />
     <MESSAGE value="Temporary removed unknown exception handler" />
     <MESSAGE value="workspace" />
-    <option name="LAST_COMMIT_MESSAGE" value="workspace" />
+    <MESSAGE value="CORS Policy" />
+    <MESSAGE value="User Edit through ExecuteUpdate" />
+    <MESSAGE value="temp exception thrower" />
+    <option name="LAST_COMMIT_MESSAGE" value="temp exception thrower" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

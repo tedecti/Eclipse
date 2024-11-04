@@ -5,7 +5,6 @@ using Eclipse.Repositories;
 using Eclipse.Repositories.Interfaces;
 using Eclipse.Services;
 using Eclipse.Services.Interfaces;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -28,7 +27,7 @@ public class Program
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
         builder.Services.AddAutoMapper(typeof(Data.AutoMapper));
-        
+
         var key = builder.Configuration.GetValue<string>("ApiSettings:Secret");
 
         builder.Services.AddAuthentication(x =>
@@ -91,7 +90,7 @@ public class Program
         }
 
         app.UseHttpsRedirection();
-        
+
         app.UseAuthentication();
         app.UseAuthorization();
 

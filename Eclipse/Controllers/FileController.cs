@@ -1,17 +1,16 @@
 using Eclipse.Repositories.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.Formats.Png;
 using SixLabors.ImageSharp.Processing;
 
-namespace Eclipse.Controllers
+namespace Eclipse.Controllers;
+
+[Route("api/file/{fileName}")]
+[ApiController]
+public class FileController : ControllerBase
 {
-    [Route("api/file/{fileName}")]
-    [ApiController]
-    public class FileController : ControllerBase
-    {
-         private readonly IWebHostEnvironment _environment;
+    private readonly IWebHostEnvironment _environment;
     private readonly IFileRepository _fileRepo;
 
     public FileController(IWebHostEnvironment environment, IFileRepository fileRepo)
@@ -19,20 +18,20 @@ namespace Eclipse.Controllers
         _environment = environment;
         _fileRepo = fileRepo;
     }
-    
+
     [HttpGet]
     public async Task<IActionResult> Index(string fileName)
     {
         using (var imageStream = await _fileRepo.GetFile(fileName))
         {
             imageStream.Seek(0, SeekOrigin.Begin);
-            
+
             using (var image = Image.Load(imageStream))
             {
                 image.Mutate(x => x
                     .Resize(new ResizeOptions
                     {
-                        Size = new Size(375, 500),  
+                        Size = new Size(375, 500),
                         Mode = ResizeMode.Max
                     })
                 );
@@ -74,6 +73,5 @@ namespace Eclipse.Controllers
                 }
             }
         }
-    }
     }
 }

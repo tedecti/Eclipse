@@ -10,7 +10,7 @@ public class Message
     public string? ReplyId { get; set; }
     public bool IsRead { get; set; }
     public DateTime Timestamp { get; set; }
-    
+
     public User Sender { get; set; }
     public ChatRoom ChatRoom { get; set; }
 }

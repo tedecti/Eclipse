@@ -12,6 +12,13 @@ public class AppDbContext : DbContext
         _configuration = configuration;
     }
 
+    public DbSet<User> Users { get; set; } = default!;
+    public DbSet<ChatRoom> ChatRooms { get; set; } = default!;
+    public DbSet<Conference> Conferences { get; set; } = default!;
+    public DbSet<ConferenceMember> ConferenceMembers { get; set; } = default!;
+    public DbSet<Message> Messages { get; set; } = default!;
+    public DbSet<Contact> Contacts { get; set; } = default!;
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseNpgsql(_configuration.GetConnectionString("Npgsql"));
@@ -48,7 +55,7 @@ public class AppDbContext : DbContext
             conference => conference.ConferenceMembers,
             conferenceMember => conferenceMember.ConferenceId
         );
-        
+
         modelBuilder.ConfigureHasOneWithMany<User, ConferenceMember>(
             conferenceMember => conferenceMember.Member,
             user => user.ConferenceMembers,
@@ -65,11 +72,4 @@ public class AppDbContext : DbContext
             contact => contact.ContactUserId,
             DeleteBehavior.Restrict);
     }
-
-    public DbSet<User> Users { get; set; } = default!;
-    public DbSet<ChatRoom> ChatRooms { get; set; } = default!;
-    public DbSet<Conference> Conferences { get; set; } = default!;
-    public DbSet<ConferenceMember> ConferenceMembers { get; set; } = default!;
-    public DbSet<Message> Messages { get; set; } = default!;
-    public DbSet<Contact> Contacts { get; set; } = default!;
 }

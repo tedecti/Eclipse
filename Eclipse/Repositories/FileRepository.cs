@@ -30,6 +30,28 @@ public class FileRepository : IFileRepository
         return await DownloadFileFromStorage(fileName);
     }
 
+    public async Task<bool> DeleteFileFromStorage(string fileName)
+    {
+        var storageConfig = _configuration.GetSection("Minio").Get<MinioStorageConfig>();
+        var minioClient = new MinioClient()
+            .WithEndpoint(storageConfig?.Endpoint)
+            .WithCredentials(storageConfig?.AccessKey, storageConfig?.SecretKey)
+            .WithSSL()
+            .Build();
+        try
+        {
+            var args = new RemoveObjectArgs()
+                .WithBucket(BucketName)
+                .WithObject(fileName);
+            await minioClient.RemoveObjectAsync(args);
+            return true;
+        }
+        catch (MinioException e)
+        {
+            return false;
+        }
+    }
+
     private async Task<bool> UploadFileToStorage(Stream fileStream, string fileName)
     {
         const string contentType = "application/octet-stream";
@@ -102,27 +124,5 @@ public class FileRepository : IFileRepository
         }
 
         return null;
-    }
-
-    public async Task<bool> DeleteFileFromStorage(string fileName)
-    {
-        var storageConfig = _configuration.GetSection("Minio").Get<MinioStorageConfig>();
-        var minioClient = new MinioClient()
-            .WithEndpoint(storageConfig?.Endpoint)
-            .WithCredentials(storageConfig?.AccessKey, storageConfig?.SecretKey)
-            .WithSSL()
-            .Build();
-        try
-        {
-            var args = new RemoveObjectArgs()
-                .WithBucket(BucketName)
-                .WithObject(fileName);
-            await minioClient.RemoveObjectAsync(args);
-            return true;
-        }
-        catch (MinioException e)
-        {
-            return false;
-        }
     }
 }
