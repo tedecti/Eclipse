@@ -54,8 +54,12 @@ public class UserRepository : IUserRepository
     public async Task<User> UploadAvatar(Guid userId, string fileName)
     {
         var user = await GetUserById(userId);
-        user.Pfp = fileName;
-        await _context.SaveChangesAsync();
-        return user;
+        if (user != null)
+        {
+            user.Pfp = fileName;
+            await _context.SaveChangesAsync();
+            return user;
+        }
+        return null;
     }
 }
