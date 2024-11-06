@@ -26,9 +26,9 @@ public class AuthRepository : IAuthRepository
     public async Task<User> Register(RegisterDto registerDto)
     {
         if (string.IsNullOrEmpty(registerDto.Email))
-            throw new ArgumentNullException(nameof(registerDto.Email), "Email cannot be null or empty");
+            throw new ArgumentNullException(registerDto.Email, "Email cannot be null or empty");
         if (string.IsNullOrEmpty(registerDto.Password))
-            throw new ArgumentNullException(nameof(registerDto.Password), "Password cannot be null or empty");
+            throw new ArgumentNullException(registerDto.Password, "Password cannot be null or empty");
         if (await _context.Users.AnyAsync(u => u.Email == registerDto.Email))
             throw new InvalidOperationException("User with the same email already exists");
 
