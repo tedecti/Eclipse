@@ -25,7 +25,7 @@ public class FileRepository : IFileRepository
         return uploadFile ? fileName : "";
     }
 
-    public async Task<Stream> GetFile(string fileName)
+    public async Task<Stream?> GetFile(string fileName)
     {
         return await DownloadFileFromStorage(fileName);
     }
@@ -54,7 +54,6 @@ public class FileRepository : IFileRepository
 
     private async Task<bool> UploadFileToStorage(Stream fileStream, string fileName)
     {
-        const string contentType = "application/octet-stream";
         var storageConfig = _configuration.GetSection("Minio").Get<MinioStorageConfig>();
 
         if (fileStream.CanSeek)
@@ -90,7 +89,7 @@ public class FileRepository : IFileRepository
         }
     }
 
-    private async Task<MemoryStream> DownloadFileFromStorage(string fileName)
+    private async Task<MemoryStream?> DownloadFileFromStorage(string fileName)
     {
         var storageConfig = _configuration.GetSection("Minio").Get<MinioStorageConfig>();
         var minioClient = new MinioClient()
@@ -99,7 +98,7 @@ public class FileRepository : IFileRepository
             .WithSSL()
             .Build();
 
-        var statObjectArgs = new StatObjectArgs()
+        new StatObjectArgs()
             .WithBucket(BucketName)
             .WithObject(fileName);
 
