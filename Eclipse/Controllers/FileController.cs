@@ -10,38 +10,34 @@ namespace Eclipse.Controllers;
 [ApiController]
 public class FileController : ControllerBase
 {
-    private readonly IWebHostEnvironment _environment;
     private readonly IFileRepository _fileRepo;
 
-    public FileController(IWebHostEnvironment environment, IFileRepository fileRepo)
+    public FileController(IFileRepository fileRepo)
     {
-        _environment = environment;
         _fileRepo = fileRepo;
     }
 
     [HttpGet]
     public async Task<IActionResult> Index(string fileName)
     {
-        using (var imageStream = await _fileRepo.GetFile(fileName))
+        await using var imageStream = await _fileRepo.GetFile(fileName);
+        imageStream?.Seek(0, SeekOrigin.Begin);
+
+        using (var image = await Image.LoadAsync(imageStream))
         {
-            imageStream.Seek(0, SeekOrigin.Begin);
+            image.Mutate(x => x
+                .Resize(new ResizeOptions
+                {
+                    Size = new Size(375, 500),
+                    Mode = ResizeMode.Max
+                })
+            );
 
-            using (var image = Image.Load(imageStream))
-            {
-                image.Mutate(x => x
-                    .Resize(new ResizeOptions
-                    {
-                        Size = new Size(375, 500),
-                        Mode = ResizeMode.Max
-                    })
-                );
+            var compressedImageStream = new MemoryStream();
+            await image.SaveAsync(compressedImageStream, new PngEncoder());
+            compressedImageStream.Seek(0, SeekOrigin.Begin);
 
-                var compressedImageStream = new MemoryStream();
-                image.Save(compressedImageStream, new PngEncoder());
-                compressedImageStream.Seek(0, SeekOrigin.Begin);
-
-                return File(compressedImageStream, "image/png");
-            }
+            return File(compressedImageStream, "image/png");
         }
     }
 
@@ -52,10 +48,10 @@ public class FileController : ControllerBase
         {
             using (var memoryStream = new MemoryStream())
             {
-                await imageStream.CopyToAsync(memoryStream);
+                if (imageStream != null) await imageStream.CopyToAsync(memoryStream);
                 memoryStream.Seek(0, SeekOrigin.Begin);
 
-                using (var image = Image.Load(memoryStream))
+                using (var image = await Image.LoadAsync(memoryStream))
                 {
                     image.Mutate(x => x
                         .Resize(new ResizeOptions
@@ -66,7 +62,7 @@ public class FileController : ControllerBase
                     );
 
                     var compressedImageStream = new MemoryStream();
-                    image.Save(compressedImageStream, new PngEncoder());
+                    await image.SaveAsync(compressedImageStream, new PngEncoder());
                     compressedImageStream.Seek(0, SeekOrigin.Begin);
 
                     return File(compressedImageStream, "image/png");
