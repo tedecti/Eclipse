@@ -4,4 +4,7 @@ obj/
 riderModule.iml
 /_ReSharper.Caches/appsettings.json
 ./Eclipse/appsettings.json
+appsettings.json
+/appsettings.json
 /.idea
+.idea/
