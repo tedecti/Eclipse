@@ -21,6 +21,7 @@ public class ContactRepository : IContactRepository
     {
         var contacts = await _context.Contacts
             .Where(c => c.UserId == userId)
+            .Include(c => c.User)
             .ToListAsync();
         if (contacts.Count == 0)
         {
