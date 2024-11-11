@@ -8,7 +8,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8470db5d-13fe-41a0-b26d-97bbfa0c93a3" name="Changes" comment="." />
+    <list default="true" id="8470db5d-13fe-41a0-b26d-97bbfa0c93a3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Eclipse/Middlewares/LastSeenUpdateMiddleware.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eclipse/Services/ContactService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eclipse/Services/Interfaces/IContactService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7/storage_v2/_src_/database/railway.Hf4GOg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7/storage_v2/_src_/database/railway.Hf4GOg/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Migrations/20241022110720_Initial.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Migrations/20241022110720_Initial.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Models/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Repositories/ContactRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Repositories/ContactRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Repositories/Interfaces/IUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Repositories/Interfaces/IUserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Repositories/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Repositories/UserRepository.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +33,11 @@
     <option name="autoShow" value="false" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -36,12 +56,8 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/06c046bf69aa4f768c77e50706275b1b26a820/29/8545072a/DbContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/96b22701ce3542d68e66b33c1ae9a14f1e6620/51/902dfd20/RelationalQueryableExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c87d74c82824421bb59de7f19d0486bdc2d800/8e/271a5f0a/UnauthorizedAccessException.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Controllers/UserController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Controllers/UserController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Eclipse/Models/User.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Repositories/Interfaces/IUserRepository.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Repositories/UserRepository.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Repositories/UserRepository.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Program.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -55,26 +71,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.Eclipse: http.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.Eclipse: http.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Eclipse: http">
     <configuration name="Eclipse: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Eclipse/Eclipse.csproj" />
@@ -191,31 +207,10 @@
       <workItem from="1730452880254" duration="3488000" />
       <workItem from="1730695196868" duration="1174000" />
       <workItem from="1730887741784" duration="1632000" />
-      <workItem from="1730889418134" duration="1820000" />
-    </task>
-    <task id="LOCAL-00001" summary="Eclipse creation">
-      <option name="closed" value="true" />
-      <created>1728296854777</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1728296854777</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Models">
-      <option name="closed" value="true" />
-      <created>1728304888534</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1728304888534</updated>
-    </task>
-    <task id="LOCAL-00003" summary="docker compose">
-      <option name="closed" value="true" />
-      <created>1728647729467</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1728647729467</updated>
+      <workItem from="1730889418134" duration="4948000" />
+      <workItem from="1731058425033" duration="8501000" />
+      <workItem from="1731247448190" duration="2999000" />
+      <workItem from="1731297062025" duration="3522000" />
     </task>
     <task id="LOCAL-00004" summary="models update">
       <option name="closed" value="true" />
@@ -529,7 +524,87 @@
       <option name="project" value="LOCAL" />
       <updated>1730890876994</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="New linter test">
+      <option name="closed" value="true" />
+      <created>1730891360482</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1730891360482</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Linter Refactoring">
+      <option name="closed" value="true" />
+      <created>1730892375660</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1730892375660</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Linter Settings">
+      <option name="closed" value="true" />
+      <created>1730892398830</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1730892398830</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Modern IFormFile Using">
+      <option name="closed" value="true" />
+      <created>1730893319250</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1730893319250</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Stream Nullable Approving">
+      <option name="closed" value="true" />
+      <created>1730893547245</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1730893547245</updated>
+    </task>
+    <task id="LOCAL-00048" summary="User Not Found Catching">
+      <option name="closed" value="true" />
+      <created>1730893576972</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1730893576972</updated>
+    </task>
+    <task id="LOCAL-00049" summary=".gitignore Update">
+      <option name="closed" value="true" />
+      <created>1731064088312</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1731064088312</updated>
+    </task>
+    <task id="LOCAL-00050" summary=".gitignore Update">
+      <option name="closed" value="true" />
+      <created>1731064193682</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1731064193682</updated>
+    </task>
+    <task id="LOCAL-00051" summary=".gitignore Update">
+      <option name="closed" value="true" />
+      <created>1731064772468</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1731064772468</updated>
+    </task>
+    <task id="LOCAL-00052" summary="ContactRepository">
+      <option name="closed" value="true" />
+      <created>1731064897462</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1731064897462</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -539,14 +614,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Some error exceptions" />
-    <MESSAGE value="New Exception" />
-    <MESSAGE value="Contact info" />
-    <MESSAGE value="Contact relations" />
-    <MESSAGE value="all new edits for clone repo" />
-    <MESSAGE value="REFACTORING" />
-    <MESSAGE value="UserProfileDto" />
-    <MESSAGE value="UserService" />
     <MESSAGE value="some security fixes + minio storage" />
     <MESSAGE value="FileRepository" />
     <MESSAGE value="UserRepository" />
@@ -564,7 +631,34 @@
     <MESSAGE value="Reformat + Cleanup" />
     <MESSAGE value="New lib" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="New linter test" />
+    <MESSAGE value="Linter Refactoring" />
+    <MESSAGE value="Linter Settings" />
+    <MESSAGE value="Modern IFormFile Using" />
+    <MESSAGE value="Stream Nullable Approving" />
+    <MESSAGE value="User Not Found Catching" />
+    <MESSAGE value=".gitignore Update" />
+    <MESSAGE value="ContactRepository" />
+    <option name="LAST_COMMIT_MESSAGE" value="ContactRepository" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Eclipse/Repositories/ContactRepository.cs</url>
+          <line>49</line>
+          <properties documentPath="$PROJECT_DIR$/Eclipse/Repositories/ContactRepository.cs" containingFunctionPresentation="Method 'CheckIfContactExists'">
+            <startOffsets>
+              <option value="1461" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1462" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
