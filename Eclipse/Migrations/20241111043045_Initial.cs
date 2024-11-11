@@ -36,6 +36,7 @@ namespace Eclipse.Migrations
                     Username = table.Column<string>(type: "text", nullable: false),
                     Phone = table.Column<string>(type: "text", nullable: false),
                     Pfp = table.Column<string>(type: "text", nullable: true),
+                    LastOnline = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     RegisteredAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
                 constraints: table =>
