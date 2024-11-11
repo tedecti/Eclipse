@@ -21,6 +21,6 @@ public class User
 
     public string Phone { get; set; }
     public string? Pfp { get; set; }
-
+    public DateTime LastOnline { get; set; }
     [DataType(DataType.DateTime)] public DateTime RegisteredAt { get; set; }
 }
