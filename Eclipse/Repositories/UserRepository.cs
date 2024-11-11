@@ -60,6 +60,17 @@ public class UserRepository : IUserRepository
             await _context.SaveChangesAsync();
             return user;
         }
+
         return null;
+    }
+
+    public async Task UpdateLastSeen(Guid userId)
+    {
+        var user = await GetUserById(userId);
+        if (user != null)
+        {
+            await _context.Users
+                .ExecuteUpdateAsync(s => s.SetProperty(u => u.LastOnline, DateTime.UtcNow));
+        }
     }
 }

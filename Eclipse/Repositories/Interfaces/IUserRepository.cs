@@ -10,4 +10,5 @@ public interface IUserRepository
     public Task<List<User>> GetAllUsers();
     public Task<User> UploadAvatar(Guid userId, string fileName);
     public Task<User?> UpdateUser(Guid userId, UserProfileDto userProfileDto);
+    public Task UpdateLastSeen(Guid userId);
 }
