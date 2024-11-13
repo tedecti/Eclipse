@@ -54,14 +54,11 @@ public class UserRepository : IUserRepository
     public async Task<User> UploadAvatar(Guid userId, string fileName)
     {
         var user = await GetUserById(userId);
-        if (user != null)
-        {
-            user.Pfp = fileName;
-            await _context.SaveChangesAsync();
-            return user;
-        }
+        if (user == null) return null;
+        user.Pfp = fileName;
+        await _context.SaveChangesAsync();
+        return user;
 
-        return null;
     }
 
     public async Task UpdateLastSeen(Guid userId)
@@ -69,7 +66,7 @@ public class UserRepository : IUserRepository
         var user = await GetUserById(userId);
         if (user != null)
         {
-            await _context.Users
+            await _context.Users.Where(u=> u.Id == userId)
                 .ExecuteUpdateAsync(s => s.SetProperty(u => u.LastOnline, DateTime.UtcNow));
         }
     }
