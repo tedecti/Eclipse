@@ -12,14 +12,14 @@ public class LastSeenUpdateMiddleware
         _next = next;
     }
 
-    public async Task InvokeAsync(HttpContext context, IUserRepository userService)
+    public async Task InvokeAsync(HttpContext context, IUserRepository userRepository)
     {
         if (context.User.Identity is { IsAuthenticated: true })
         {
-            var userId = context.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var userId = context.User.FindFirst("UserId")?.Value;
             if (userId != null)
             {
-                await userService.UpdateLastSeen(Guid.Parse(userId));
+                await userRepository.UpdateLastSeen(Guid.Parse(userId));
             }
         }
 
