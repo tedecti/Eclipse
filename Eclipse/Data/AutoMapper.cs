@@ -12,5 +12,6 @@ public class AutoMapper : Profile
         CreateMap<User, RegisterDto>();
         CreateMap<User, UserInfoDto>();
         CreateMap<User, UserProfileDto>();
+        CreateMap<Contact, ShortContactDto>();
     }
 }

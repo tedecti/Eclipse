@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Eclipse.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20241022110720_Initial")]
+    [Migration("20241111043045_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -180,6 +180,9 @@ namespace Eclipse.Migrations
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
+
+                    b.Property<DateTime>("LastOnline")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Name")
                         .IsRequired()

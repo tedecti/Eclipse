@@ -51,7 +51,7 @@ public class UserController : ControllerBase
 
     [Authorize]
     [HttpPut]
-    [Route("user/update/{userId:guid}")]
+    [Route("user/update")]
     public async Task<ApiResponse<User>> UpdateUserById(UserProfileDto userProfileDto)
     {
         var userIdClaim = User.FindFirst("UserId");
