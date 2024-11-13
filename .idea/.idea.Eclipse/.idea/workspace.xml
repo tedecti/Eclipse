@@ -9,20 +9,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8470db5d-13fe-41a0-b26d-97bbfa0c93a3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Eclipse/Middlewares/LastSeenUpdateMiddleware.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Eclipse/Services/ContactService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Eclipse/Services/Interfaces/IContactService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eclipse/Controllers/ContactController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eclipse/Models/Dto/ShortContactDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7/storage_v2/_src_/database/railway.Hf4GOg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7/storage_v2/_src_/database/railway.Hf4GOg/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Migrations/20241022110720_Initial.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Migrations/20241022110720_Initial.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Models/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Repositories/ContactRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Repositories/ContactRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Repositories/Interfaces/IUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Repositories/Interfaces/IUserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Controllers/UserController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Data/AutoMapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Data/AutoMapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Eclipse.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Eclipse.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Middlewares/LastSeenUpdateMiddleware.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Middlewares/LastSeenUpdateMiddleware.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Eclipse/Repositories/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Repositories/UserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Services/ContactService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Services/ContactService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Services/Interfaces/IContactService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Services/Interfaces/IContactService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,8 +54,14 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/06c046bf69aa4f768c77e50706275b1b26a820/29/8545072a/DbContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/96b22701ce3542d68e66b33c1ae9a14f1e6620/51/902dfd20/RelationalQueryableExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c87d74c82824421bb59de7f19d0486bdc2d800/8e/271a5f0a/UnauthorizedAccessException.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7/storage_v2/_src_/database/railway.Hf4GOg/schema/public.abK9xQ.meta" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Models/User.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Eclipse/Models/User.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Repositories/ContactRepository.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Repositories/Interfaces/IUserRepository.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Repositories/UserRepository.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Repositories/UserRepository.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -71,26 +75,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.Eclipse: http.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.Eclipse: http.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "git-widget-placeholder": "dev",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Eclipse: http">
     <configuration name="Eclipse: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Eclipse/Eclipse.csproj" />
@@ -210,71 +214,9 @@
       <workItem from="1730889418134" duration="4948000" />
       <workItem from="1731058425033" duration="8501000" />
       <workItem from="1731247448190" duration="2999000" />
-      <workItem from="1731297062025" duration="3522000" />
-    </task>
-    <task id="LOCAL-00004" summary="models update">
-      <option name="closed" value="true" />
-      <created>1728647755020</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1728647755020</updated>
-    </task>
-    <task id="LOCAL-00005" summary="MBE">
-      <option name="closed" value="true" />
-      <created>1728647762931</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1728647762931</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Npgsql package install">
-      <option name="closed" value="true" />
-      <created>1728647775626</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1728647775626</updated>
-    </task>
-    <task id="LOCAL-00007" summary="forgor">
-      <option name="closed" value="true" />
-      <created>1728647782589</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1728647782589</updated>
-    </task>
-    <task id="LOCAL-00008" summary="AppDbContext.cs for Db (no connection string)">
-      <option name="closed" value="true" />
-      <created>1728647806154</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1728647806154</updated>
-    </task>
-    <task id="LOCAL-00009" summary="50% commit">
-      <option name="closed" value="true" />
-      <created>1728975287561</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1728975287561</updated>
-    </task>
-    <task id="LOCAL-00010" summary="final">
-      <option name="closed" value="true" />
-      <created>1728977616727</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1728977616727</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Response for front">
-      <option name="closed" value="true" />
-      <created>1729587606271</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1729587606271</updated>
+      <workItem from="1731297062025" duration="6978000" />
+      <workItem from="1731312750932" duration="12645000" />
+      <workItem from="1731474319463" duration="1126000" />
     </task>
     <task id="LOCAL-00012" summary="ErrorHandlingMiddleware + Custom Ex">
       <option name="closed" value="true" />
@@ -604,7 +546,71 @@
       <option name="project" value="LOCAL" />
       <updated>1731064897462</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="New Migrations">
+      <option name="closed" value="true" />
+      <created>1731300947100</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1731300947100</updated>
+    </task>
+    <task id="LOCAL-00054" summary=".idea">
+      <option name="closed" value="true" />
+      <created>1731300957869</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1731300957869</updated>
+    </task>
+    <task id="LOCAL-00055" summary="User Model LastOnline Field">
+      <option name="closed" value="true" />
+      <created>1731300987750</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1731300987751</updated>
+    </task>
+    <task id="LOCAL-00056" summary="LastSeenUpdateMiddleware">
+      <option name="closed" value="true" />
+      <created>1731301000856</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1731301000856</updated>
+    </task>
+    <task id="LOCAL-00057" summary="ContactService">
+      <option name="closed" value="true" />
+      <created>1731301019180</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1731301019181</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Use Middleware + Scope For ContactService">
+      <option name="closed" value="true" />
+      <created>1731301043281</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1731301043281</updated>
+    </task>
+    <task id="LOCAL-00059" summary="ContactRepository Update For Sorting">
+      <option name="closed" value="true" />
+      <created>1731301083185</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1731301083185</updated>
+    </task>
+    <task id="LOCAL-00060" summary="LastSeen Field Update">
+      <option name="closed" value="true" />
+      <created>1731301096693</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1731301096693</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -614,14 +620,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="some security fixes + minio storage" />
-    <MESSAGE value="FileRepository" />
-    <MESSAGE value="UserRepository" />
-    <MESSAGE value="UserController" />
-    <MESSAGE value="FileController" />
-    <MESSAGE value="idk????" />
-    <MESSAGE value="FileController DI fix" />
-    <MESSAGE value="changed route" />
     <MESSAGE value="changed route (/api/file)" />
     <MESSAGE value="Temporary removed unknown exception handler" />
     <MESSAGE value="workspace" />
@@ -639,7 +637,15 @@
     <MESSAGE value="User Not Found Catching" />
     <MESSAGE value=".gitignore Update" />
     <MESSAGE value="ContactRepository" />
-    <option name="LAST_COMMIT_MESSAGE" value="ContactRepository" />
+    <MESSAGE value="New Migrations" />
+    <MESSAGE value=".idea" />
+    <MESSAGE value="User Model LastOnline Field" />
+    <MESSAGE value="LastSeenUpdateMiddleware" />
+    <MESSAGE value="ContactService" />
+    <MESSAGE value="Use Middleware + Scope For ContactService" />
+    <MESSAGE value="ContactRepository Update For Sorting" />
+    <MESSAGE value="LastSeen Field Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="LastSeen Field Update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -656,6 +662,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Eclipse/Middlewares/LastSeenUpdateMiddleware.cs</url>
+          <line>19</line>
+          <properties documentPath="$PROJECT_DIR$/Eclipse/Middlewares/LastSeenUpdateMiddleware.cs" containingFunctionPresentation="Method 'InvokeAsync'">
+            <startOffsets>
+              <option value="525" />
+            </startOffsets>
+            <endOffsets>
+              <option value="544" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
