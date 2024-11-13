@@ -8,16 +8,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8470db5d-13fe-41a0-b26d-97bbfa0c93a3" name="Changes" comment="">
+    <list default="true" id="8470db5d-13fe-41a0-b26d-97bbfa0c93a3" name="Changes" comment="Contact Dto For Short Information">
       <change afterPath="$PROJECT_DIR$/Eclipse/Controllers/ContactController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Eclipse/Models/Dto/ShortContactDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7/storage_v2/_src_/database/railway.Hf4GOg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7/storage_v2/_src_/database/railway.Hf4GOg/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Eclipse/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Controllers/UserController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Data/AutoMapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Data/AutoMapper.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Eclipse/Eclipse.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Eclipse.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Eclipse/Middlewares/LastSeenUpdateMiddleware.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Middlewares/LastSeenUpdateMiddleware.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Repositories/ContactRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Repositories/ContactRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Eclipse/Repositories/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Repositories/UserRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Eclipse/Services/ContactService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Services/ContactService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Eclipse/Services/Interfaces/IContactService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Services/Interfaces/IContactService.cs" afterDir="false" />
@@ -55,11 +52,9 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/96b22701ce3542d68e66b33c1ae9a14f1e6620/51/902dfd20/RelationalQueryableExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c87d74c82824421bb59de7f19d0486bdc2d800/8e/271a5f0a/UnauthorizedAccessException.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///home/tedecti/RiderProjects/Eclipse/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7/storage_v2/_src_/database/railway.Hf4GOg/schema/public.abK9xQ.meta" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Models/User.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Controllers/UserController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Data/AutoMapper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Eclipse/Models/User.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Program.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Repositories/ContactRepository.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Repositories/Interfaces/IUserRepository.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Repositories/UserRepository.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Repositories/UserRepository.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -77,7 +72,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Launch Settings Profile.Eclipse: http.executor": "Debug",
+    ".NET Launch Settings Profile.Eclipse: http.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "git-widget-placeholder": "dev",
@@ -216,23 +211,7 @@
       <workItem from="1731247448190" duration="2999000" />
       <workItem from="1731297062025" duration="6978000" />
       <workItem from="1731312750932" duration="12645000" />
-      <workItem from="1731474319463" duration="1126000" />
-    </task>
-    <task id="LOCAL-00012" summary="ErrorHandlingMiddleware + Custom Ex">
-      <option name="closed" value="true" />
-      <created>1729587629124</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1729587629124</updated>
-    </task>
-    <task id="LOCAL-00013" summary="using middleware">
-      <option name="closed" value="true" />
-      <created>1729587636316</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1729587636316</updated>
+      <workItem from="1731474319463" duration="4313000" />
     </task>
     <task id="LOCAL-00014" summary="using responses">
       <option name="closed" value="true" />
@@ -610,7 +589,23 @@
       <option name="project" value="LOCAL" />
       <updated>1731301096693</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Workspace">
+      <option name="closed" value="true" />
+      <created>1731475545334</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1731475545335</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Contact Dto For Short Information">
+      <option name="closed" value="true" />
+      <created>1731475577671</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1731475577671</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -620,8 +615,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="changed route (/api/file)" />
-    <MESSAGE value="Temporary removed unknown exception handler" />
     <MESSAGE value="workspace" />
     <MESSAGE value="CORS Policy" />
     <MESSAGE value="User Edit through ExecuteUpdate" />
@@ -645,20 +638,22 @@
     <MESSAGE value="Use Middleware + Scope For ContactService" />
     <MESSAGE value="ContactRepository Update For Sorting" />
     <MESSAGE value="LastSeen Field Update" />
-    <option name="LAST_COMMIT_MESSAGE" value="LastSeen Field Update" />
+    <MESSAGE value="Workspace" />
+    <MESSAGE value="Contact Dto For Short Information" />
+    <option name="LAST_COMMIT_MESSAGE" value="Contact Dto For Short Information" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Eclipse/Repositories/ContactRepository.cs</url>
-          <line>49</line>
+          <line>50</line>
           <properties documentPath="$PROJECT_DIR$/Eclipse/Repositories/ContactRepository.cs" containingFunctionPresentation="Method 'CheckIfContactExists'">
             <startOffsets>
-              <option value="1461" />
+              <option value="1502" />
             </startOffsets>
             <endOffsets>
-              <option value="1462" />
+              <option value="1503" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />
