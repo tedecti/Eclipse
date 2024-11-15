@@ -9,15 +9,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8470db5d-13fe-41a0-b26d-97bbfa0c93a3" name="Changes" comment="Contact Dto For Short Information">
-      <change afterPath="$PROJECT_DIR$/Eclipse/Controllers/ContactController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eclipse/Controllers/ChatController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eclipse/Hubs/ChatHub.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eclipse/Models/Dto/ChatRoomDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eclipse/Models/Dto/UserDtoForChats.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eclipse/Repositories/ChatRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eclipse/Repositories/Interfaces/IChatRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7/storage_v2/_src_/database/railway.Hf4GOg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7/storage_v2/_src_/database/railway.Hf4GOg/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Controllers/UserController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Data/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Data/AppDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Data/AutoMapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Data/AutoMapper.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Eclipse/Eclipse.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Eclipse.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Middlewares/LastSeenUpdateMiddleware.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Middlewares/LastSeenUpdateMiddleware.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Repositories/ContactRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Repositories/ContactRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Repositories/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Repositories/UserRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Services/ContactService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Services/ContactService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Services/Interfaces/IContactService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Services/Interfaces/IContactService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Middlewares/ErrorHandlingMiddleware.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Middlewares/ErrorHandlingMiddleware.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Migrations/20241111043045_Initial.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Migrations/20241111043045_Initial.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Models/ChatRoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Models/ChatRoom.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +90,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -212,6 +221,8 @@
       <workItem from="1731297062025" duration="6978000" />
       <workItem from="1731312750932" duration="12645000" />
       <workItem from="1731474319463" duration="4313000" />
+      <workItem from="1731652294241" duration="608000" />
+      <workItem from="1731663185423" duration="4720000" />
     </task>
     <task id="LOCAL-00014" summary="using responses">
       <option name="closed" value="true" />
