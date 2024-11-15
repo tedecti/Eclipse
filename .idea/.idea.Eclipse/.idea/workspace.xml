@@ -8,23 +8,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8470db5d-13fe-41a0-b26d-97bbfa0c93a3" name="Changes" comment="Contact Dto For Short Information">
+    <list default="true" id="8470db5d-13fe-41a0-b26d-97bbfa0c93a3" name="Changes" comment="Workflow">
       <change afterPath="$PROJECT_DIR$/Eclipse/Controllers/ChatController.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Eclipse/Hubs/ChatHub.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Eclipse/Models/Dto/ChatRoomDto.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Eclipse/Models/Dto/UserDtoForChats.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Eclipse/Repositories/ChatRepository.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Eclipse/Repositories/Interfaces/IChatRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7/storage_v2/_src_/database/railway.Hf4GOg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7/storage_v2/_src_/database/railway.Hf4GOg/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Eclipse/Data/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Data/AppDbContext.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Eclipse/Data/AutoMapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Data/AutoMapper.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Eclipse/Eclipse.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Eclipse.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Eclipse/Middlewares/ErrorHandlingMiddleware.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Middlewares/ErrorHandlingMiddleware.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Migrations/20241111043045_Initial.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Migrations/20241111043045_Initial.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Eclipse/Models/ChatRoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Models/ChatRoom.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Eclipse/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Program.cs" afterDir="false" />
     </list>
@@ -61,11 +56,10 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/96b22701ce3542d68e66b33c1ae9a14f1e6620/51/902dfd20/RelationalQueryableExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c87d74c82824421bb59de7f19d0486bdc2d800/8e/271a5f0a/UnauthorizedAccessException.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///home/tedecti/RiderProjects/Eclipse/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7/storage_v2/_src_/database/railway.Hf4GOg/schema/public.abK9xQ.meta" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Controllers/UserController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Data/AutoMapper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Data/AppDbContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Data/AppDbContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Migrations/AppDbContextModelSnapshot.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Eclipse/Models/User.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Repositories/UserRepository.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Repositories/UserRepository.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -222,23 +216,7 @@
       <workItem from="1731312750932" duration="12645000" />
       <workItem from="1731474319463" duration="4313000" />
       <workItem from="1731652294241" duration="608000" />
-      <workItem from="1731663185423" duration="4720000" />
-    </task>
-    <task id="LOCAL-00014" summary="using responses">
-      <option name="closed" value="true" />
-      <created>1729587646779</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1729587646779</updated>
-    </task>
-    <task id="LOCAL-00015" summary="migration">
-      <option name="closed" value="true" />
-      <created>1729587659735</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1729587659735</updated>
+      <workItem from="1731663185423" duration="5338000" />
     </task>
     <task id="LOCAL-00016" summary="User Info Output">
       <option name="closed" value="true" />
@@ -616,7 +594,23 @@
       <option name="project" value="LOCAL" />
       <updated>1731475577671</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="New Migrations">
+      <option name="closed" value="true" />
+      <created>1731668029233</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1731668029233</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Workflow">
+      <option name="closed" value="true" />
+      <created>1731668050816</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1731668050816</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -626,7 +620,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="workspace" />
     <MESSAGE value="CORS Policy" />
     <MESSAGE value="User Edit through ExecuteUpdate" />
     <MESSAGE value="temp exception thrower" />
@@ -641,7 +634,6 @@
     <MESSAGE value="User Not Found Catching" />
     <MESSAGE value=".gitignore Update" />
     <MESSAGE value="ContactRepository" />
-    <MESSAGE value="New Migrations" />
     <MESSAGE value=".idea" />
     <MESSAGE value="User Model LastOnline Field" />
     <MESSAGE value="LastSeenUpdateMiddleware" />
@@ -651,7 +643,9 @@
     <MESSAGE value="LastSeen Field Update" />
     <MESSAGE value="Workspace" />
     <MESSAGE value="Contact Dto For Short Information" />
-    <option name="LAST_COMMIT_MESSAGE" value="Contact Dto For Short Information" />
+    <MESSAGE value="New Migrations" />
+    <MESSAGE value="Workflow" />
+    <option name="LAST_COMMIT_MESSAGE" value="Workflow" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
