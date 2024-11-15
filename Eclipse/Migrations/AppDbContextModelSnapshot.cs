@@ -28,22 +28,16 @@ namespace Eclipse.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<Guid?>("MessageId")
-                        .IsRequired()
-                        .HasColumnType("uuid");
-
                     b.Property<Guid?>("PinnedMessageId")
                         .HasColumnType("uuid");
 
-                    b.Property<Guid>("PinnedMessageId1")
+                    b.Property<Guid?>("PinnedMessageId1")
                         .HasColumnType("uuid");
 
-                    b.Property<Guid?>("UserId1")
-                        .IsRequired()
+                    b.Property<Guid>("UserId1")
                         .HasColumnType("uuid");
 
-                    b.Property<Guid?>("UserId2")
-                        .IsRequired()
+                    b.Property<Guid>("UserId2")
                         .HasColumnType("uuid");
 
                     b.HasKey("Id");
@@ -213,9 +207,7 @@ namespace Eclipse.Migrations
                 {
                     b.HasOne("Eclipse.Models.Message", "PinnedMessage")
                         .WithMany()
-                        .HasForeignKey("PinnedMessageId1")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PinnedMessageId1");
 
                     b.HasOne("Eclipse.Models.User", "User1")
                         .WithMany()
