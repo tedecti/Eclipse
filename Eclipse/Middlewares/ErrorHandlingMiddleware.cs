@@ -1,4 +1,5 @@
 using Eclipse.Exceptions;
+using Minio.Exceptions;
 
 namespace Eclipse.Middlewares;
 
@@ -32,6 +33,12 @@ public class ErrorHandlingMiddleware
         catch (AlreadyExistsException ex)
         {
             context.Response.StatusCode = StatusCodes.Status400BadRequest;
+            await context.Response.WriteAsJsonAsync(new ApiResponse<object>
+                { Message = ex.Message, Data = Array.Empty<object>() });
+        }
+        catch (ForbiddenException ex)
+        {
+            context.Response.StatusCode = StatusCodes.Status403Forbidden;
             await context.Response.WriteAsJsonAsync(new ApiResponse<object>
                 { Message = ex.Message, Data = Array.Empty<object>() });
         }
