@@ -65,7 +65,7 @@ public class ChatRoomController : ControllerBase
             throw new ForbiddenException();
         }
 
-        var chatRoom = await _chatRepository.GetChatRoomByIdAsync(chatRoomId);
+        var chatRoom = await _chatRepository.GetChatRoomAsync(chatRoomId);
         if (chatRoom == null)
         {
             throw new NotFoundException("Room");

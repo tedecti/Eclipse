@@ -15,7 +15,7 @@ public class ChatRepository : IChatRepository
         _context = context;
     }
 
-    public async Task<Message?> SaveMessageAsync(Message? message)
+    public async Task<Message?> SaveMessageAsync(Message message)
     {
         _context.Messages.Add(message);
         await _context.SaveChangesAsync();
@@ -67,7 +67,7 @@ public class ChatRepository : IChatRepository
         }
     }
 
-    public async Task<IEnumerable<Message>> GetChatHistoryAsync(Guid chatRoomId, int skip, int take)
+    public async Task<List<Message>> GetChatHistoryAsync(Guid chatRoomId, int skip, int take)
     {
         return await _context.Messages
             .Where(m => m.ChatRoomId == chatRoomId)
@@ -133,13 +133,5 @@ public class ChatRepository : IChatRepository
 
         return chatRoom.UserId1 == userId || chatRoom.UserId2 == userId;
     }
-
-    public async Task<ChatRoom> GetChatRoomByIdAsync(Guid chatRoomId)
-    {
-        return await _context.ChatRooms
-            .Include(cr => cr.User1)
-            .Include(cr => cr.User2)
-            .Include(cr => cr.Messages)
-            .FirstOrDefaultAsync(cr => cr.Id == chatRoomId);
-    }
+    
 }

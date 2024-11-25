@@ -10,9 +10,8 @@ public interface IChatRepository
     Task MarkMessageAsReadAsync(Guid messageId);
     Task AddReactionAsync(Guid messageId, string reactionId);
     Task PinMessageAsync(Guid chatRoomId, Guid messageId);
-    Task<IEnumerable<Message>> GetChatHistoryAsync(Guid chatRoomId, int skip, int take);
+    Task<List<Message>> GetChatHistoryAsync(Guid chatRoomId, int skip, int take);
     Task<ChatRoom> CreateOrGetChatRoomAsync(Guid userId1, Guid userId2);
     Task<IEnumerable<ChatRoom>> GetUserChatRoomsAsync(Guid userId);
     Task<bool> ValidateChatRoomAccessAsync(Guid chatRoomId, Guid userId);
-    Task<ChatRoom> GetChatRoomByIdAsync(Guid chatRoomId);
 }
