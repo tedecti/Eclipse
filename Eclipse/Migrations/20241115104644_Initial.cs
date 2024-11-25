@@ -102,9 +102,8 @@ namespace Eclipse.Migrations
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     UserId1 = table.Column<Guid>(type: "uuid", nullable: false),
                     UserId2 = table.Column<Guid>(type: "uuid", nullable: false),
-                    MessageId = table.Column<Guid>(type: "uuid", nullable: false),
                     PinnedMessageId = table.Column<Guid>(type: "uuid", nullable: true),
-                    PinnedMessageId1 = table.Column<Guid>(type: "uuid", nullable: false)
+                    PinnedMessageId1 = table.Column<Guid>(type: "uuid", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -201,8 +200,7 @@ namespace Eclipse.Migrations
                 table: "ChatRooms",
                 column: "PinnedMessageId1",
                 principalTable: "Messages",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
+                principalColumn: "Id");
         }
 
         /// <inheritdoc />

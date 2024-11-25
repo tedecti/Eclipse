@@ -1,5 +1,6 @@
 using System.Text;
 using Eclipse.Data;
+using Eclipse.Hubs;
 using Eclipse.Middlewares;
 using Eclipse.Repositories;
 using Eclipse.Repositories.Interfaces;
@@ -19,12 +20,16 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
         builder.Services.AddDbContext<AppDbContext>(options =>
             options.UseNpgsql(builder.Configuration.GetConnectionString("Npgsql")));
+        builder.Services.AddSignalR();
+        
         builder.Services.AddScoped<IFileRepository, FileRepository>();
         builder.Services.AddScoped<IAuthRepository, AuthRepository>();
         builder.Services.AddScoped<IUserRepository, UserRepository>();
         builder.Services.AddScoped<IUserService, UserService>();
         builder.Services.AddScoped<IContactRepository, ContactRepository>();
         builder.Services.AddScoped<IContactService, ContactService>();
+        builder.Services.AddScoped<IChatRepository, ChatRepository>();
+        
         builder.Services.AddControllers();
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
@@ -46,6 +51,18 @@ public class Program
                 ValidateAudience = false,
                 ValidateIssuerSigningKey = true,
                 IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(key))
+            };
+            x.Events = new JwtBearerEvents
+            {
+                OnMessageReceived = context => {
+                    var accessToken = context.Request.Query["access_token"];
+                    var path = context.HttpContext.Request.Path;
+                    if (!string.IsNullOrEmpty(accessToken) && path.StartsWithSegments("/chatHub"))
+                    {
+                        context.Token = accessToken;
+                    }
+                    return Task.CompletedTask;
+                }
             };
         });
 
@@ -78,10 +95,10 @@ public class Program
         });
         builder.Services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
         {
-            builder.WithOrigins("http://localhost:3000")
+            builder.SetIsOriginAllowed(_ => true)
+                .AllowAnyHeader()
                 .AllowAnyMethod()
-                .AllowCredentials()
-                .AllowAnyHeader();
+                .AllowCredentials(); 
         }));
         var app = builder.Build();
 
@@ -101,6 +118,8 @@ public class Program
         app.UseCors("MyPolicy");
         app.MapControllers();
 
+        app.MapHub<ChatHub>("/chatHub");
+        
         app.Run();
     }
 }
