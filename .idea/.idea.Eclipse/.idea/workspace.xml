@@ -8,20 +8,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8470db5d-13fe-41a0-b26d-97bbfa0c93a3" name="Changes" comment="Workflow">
-      <change afterPath="$PROJECT_DIR$/Eclipse/Controllers/ChatController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Eclipse/Hubs/ChatHub.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Eclipse/Models/Dto/ChatRoomDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Eclipse/Models/Dto/UserDtoForChats.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Eclipse/Repositories/ChatRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Eclipse/Repositories/Interfaces/IChatRepository.cs" afterDir="false" />
+    <list default="true" id="8470db5d-13fe-41a0-b26d-97bbfa0c93a3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Data/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Data/AppDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Data/AutoMapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Data/AutoMapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Controllers/ChatController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Controllers/ChatController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Eclipse/Eclipse.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Eclipse.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Middlewares/ErrorHandlingMiddleware.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Middlewares/ErrorHandlingMiddleware.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Models/ChatRoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Models/ChatRoom.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Hubs/ChatHub.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Hubs/ChatHub.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Eclipse/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Repositories/ChatRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Repositories/ChatRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Repositories/Interfaces/IChatRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Repositories/Interfaces/IChatRepository.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,8 +53,14 @@
     <setting file="mock:///home/tedecti/RiderProjects/Eclipse/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7/storage_v2/_src_/database/railway.Hf4GOg/schema/public.abK9xQ.meta" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Data/AppDbContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Data/AppDbContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Data/AppDbContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Data/AutoMapper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Middlewares/ErrorHandlingMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Middlewares/ErrorHandlingMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Migrations/AppDbContextModelSnapshot.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Models/ChatRoom.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Eclipse/Models/User.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Program.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -73,26 +74,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.Eclipse: http.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "git-widget-placeholder": "dev",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.Eclipse: http.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Eclipse: http">
     <configuration name="Eclipse: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Eclipse/Eclipse.csproj" />
@@ -216,63 +217,14 @@
       <workItem from="1731312750932" duration="12645000" />
       <workItem from="1731474319463" duration="4313000" />
       <workItem from="1731652294241" duration="608000" />
-      <workItem from="1731663185423" duration="5338000" />
-    </task>
-    <task id="LOCAL-00016" summary="User Info Output">
-      <option name="closed" value="true" />
-      <created>1729593709434</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1729593709434</updated>
-    </task>
-    <task id="LOCAL-00017" summary="GetUserByEmail">
-      <option name="closed" value="true" />
-      <created>1729594189136</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1729594189136</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Some error exceptions">
-      <option name="closed" value="true" />
-      <created>1729594200513</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1729594200513</updated>
-    </task>
-    <task id="LOCAL-00019" summary="New Exception">
-      <option name="closed" value="true" />
-      <created>1729594219693</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1729594219693</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Contact info">
-      <option name="closed" value="true" />
-      <created>1729594947433</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1729594947433</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Contact relations">
-      <option name="closed" value="true" />
-      <created>1729595045096</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1729595045096</updated>
-    </task>
-    <task id="LOCAL-00022" summary="all new edits for clone repo">
-      <option name="closed" value="true" />
-      <created>1729957008554</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1729957008554</updated>
+      <workItem from="1731663185423" duration="10185000" />
+      <workItem from="1731730266288" duration="662000" />
+      <workItem from="1731929715333" duration="262000" />
+      <workItem from="1731930145725" duration="2660000" />
+      <workItem from="1731933045220" duration="772000" />
+      <workItem from="1731995569331" duration="1051000" />
+      <workItem from="1731998452914" duration="199000" />
+      <workItem from="1732105352939" duration="2550000" />
     </task>
     <task id="LOCAL-00023" summary="REFACTORING">
       <option name="closed" value="true" />
@@ -610,7 +562,63 @@
       <option name="project" value="LOCAL" />
       <updated>1731668050816</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="New Maps">
+      <option name="closed" value="true" />
+      <created>1731668611372</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1731668611372</updated>
+    </task>
+    <task id="LOCAL-00066" summary="New Dtos">
+      <option name="closed" value="true" />
+      <created>1731668621884</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1731668621884</updated>
+    </task>
+    <task id="LOCAL-00067" summary="ChatRoom Update">
+      <option name="closed" value="true" />
+      <created>1731668629948</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1731668629948</updated>
+    </task>
+    <task id="LOCAL-00068" summary="Working with Chats">
+      <option name="closed" value="true" />
+      <created>1731668655566</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1731668655566</updated>
+    </task>
+    <task id="LOCAL-00069" summary="SignalR">
+      <option name="closed" value="true" />
+      <created>1731668672585</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1731668672585</updated>
+    </task>
+    <task id="LOCAL-00070" summary="403 Forbidden Catching">
+      <option name="closed" value="true" />
+      <created>1731668697508</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1731668697508</updated>
+    </task>
+    <task id="LOCAL-00071" summary="Workflow">
+      <option name="closed" value="true" />
+      <created>1731668704193</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1731668704193</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -620,12 +628,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="CORS Policy" />
-    <MESSAGE value="User Edit through ExecuteUpdate" />
-    <MESSAGE value="temp exception thrower" />
-    <MESSAGE value="Reformat + Cleanup" />
-    <MESSAGE value="New lib" />
-    <MESSAGE value="." />
     <MESSAGE value="New linter test" />
     <MESSAGE value="Linter Refactoring" />
     <MESSAGE value="Linter Settings" />
@@ -644,6 +646,12 @@
     <MESSAGE value="Workspace" />
     <MESSAGE value="Contact Dto For Short Information" />
     <MESSAGE value="New Migrations" />
+    <MESSAGE value="New Maps" />
+    <MESSAGE value="New Dtos" />
+    <MESSAGE value="ChatRoom Update" />
+    <MESSAGE value="Working with Chats" />
+    <MESSAGE value="SignalR" />
+    <MESSAGE value="403 Forbidden Catching" />
     <MESSAGE value="Workflow" />
     <option name="LAST_COMMIT_MESSAGE" value="Workflow" />
   </component>
@@ -662,19 +670,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Eclipse/Middlewares/LastSeenUpdateMiddleware.cs</url>
-          <line>19</line>
-          <properties documentPath="$PROJECT_DIR$/Eclipse/Middlewares/LastSeenUpdateMiddleware.cs" containingFunctionPresentation="Method 'InvokeAsync'">
-            <startOffsets>
-              <option value="525" />
-            </startOffsets>
-            <endOffsets>
-              <option value="544" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
