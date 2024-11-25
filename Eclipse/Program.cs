@@ -95,10 +95,10 @@ public class Program
         });
         builder.Services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
         {
-            builder.WithOrigins("http://localhost:3000")
+            builder.SetIsOriginAllowed(_ => true)
+                .AllowAnyHeader()
                 .AllowAnyMethod()
-                .AllowCredentials()
-                .AllowAnyHeader();
+                .AllowCredentials(); 
         }));
         var app = builder.Build();
 
