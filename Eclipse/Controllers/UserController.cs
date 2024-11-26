@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Eclipse.Controllers;
 
-[Route("api")]
+[Route("api/user")]
 [ApiController]
 public class UserController : ControllerBase
 {
@@ -40,7 +40,7 @@ public class UserController : ControllerBase
     }
 
     [HttpGet]
-    [Route("user/{userId:guid}")]
+    [Route("{userId:guid}")]
     public async Task<ApiResponse<UserProfileDto>> GetUserById(Guid userId)
     {
         var user = await _userService.GetUserMapped(userId);
@@ -51,7 +51,7 @@ public class UserController : ControllerBase
 
     [Authorize]
     [HttpPut]
-    [Route("user/update")]
+    [Route("update")]
     public async Task<ApiResponse<User>> UpdateUserById(UserProfileDto userProfileDto)
     {
         var userIdClaim = User.FindFirst("UserId");
@@ -64,7 +64,7 @@ public class UserController : ControllerBase
     }
 
     [Authorize]
-    [HttpPost("user/pfp/upload")]
+    [HttpPost("pfp/upload")]
     public async Task<ApiResponse<object>> UploadAvatar(IFormFile file)
     {
         var user = User.FindFirst("UserId")!.Value;
