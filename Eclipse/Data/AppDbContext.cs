@@ -37,6 +37,12 @@ public class AppDbContext : DbContext
             .WithMany()
             .HasForeignKey(c => c.UserId2)
             .OnDelete(DeleteBehavior.Restrict);
+        
+        modelBuilder.Entity<ChatRoom>()
+            .HasOne(c => c.PinnedMessage)
+            .WithMany()
+            .HasForeignKey(c => c.PinnedMessageId)
+            .OnDelete(DeleteBehavior.SetNull);
 
         modelBuilder.ConfigureHasManyWithOne<ChatRoom, Message>(
             chatRoom => chatRoom.Messages,
