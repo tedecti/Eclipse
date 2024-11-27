@@ -26,9 +26,8 @@ public class ChatHub : Hub
 
     private Guid GetCurrentUserId()
     {
-        var userIdClaim = Context.User.FindFirst(ClaimTypes.NameIdentifier) ??
-                          throw new UnauthorizedAccessException("User ID claim not found");
-        return Guid.Parse(userIdClaim.Value);
+        var userId = Guid.Parse(Context.User.FindFirst("UserId").Value);
+        return userId;
     }
 
     private async Task NotifyOtherUserOfConnection(ChatRoom chatRoom, Guid currentUserId)
