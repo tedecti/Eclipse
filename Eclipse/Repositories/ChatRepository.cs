@@ -125,13 +125,13 @@ public class ChatRepository : IChatRepository
     public async Task<IEnumerable<ChatRoom>> GetUserChatRoomsAsync(Guid userId)
     {
         return await _context.ChatRooms
-            .AsNoTracking()
             .Include(cr => cr.User1)
             .Include(cr => cr.User2)
             .Include(cr => cr.Messages.OrderByDescending(m => m.Timestamp).Take(1))
             .Where(cr => cr.UserId1 == userId || cr.UserId2 == userId)
             .ToListAsync();
     }
+
 
     public async Task<bool> ValidateChatRoomAccessAsync(Guid chatRoomId, Guid userId)
     {

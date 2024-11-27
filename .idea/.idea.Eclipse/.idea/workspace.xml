@@ -9,10 +9,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8470db5d-13fe-41a0-b26d-97bbfa0c93a3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7/storage_v2/_src_/database/railway.Hf4GOg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7/storage_v2/_src_/database/railway.Hf4GOg/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Hubs/ChatHub.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Hubs/ChatHub.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Controllers/ChatController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Controllers/ChatController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Models/Dto/ChatRoomDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Models/Dto/ChatRoomDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Repositories/ChatRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Repositories/ChatRepository.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,15 +238,8 @@
       <workItem from="1732600656404" duration="1007000" />
       <workItem from="1732616796315" duration="335000" />
       <workItem from="1732683877027" duration="7107000" />
-      <workItem from="1732706913568" duration="901000" />
-    </task>
-    <task id="LOCAL-00031" summary="idk????">
-      <option name="closed" value="true" />
-      <created>1730119498411</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1730119498411</updated>
+      <workItem from="1732706913568" duration="1250000" />
+      <workItem from="1732715673149" duration="909000" />
     </task>
     <task id="LOCAL-00032" summary="FileController DI fix">
       <option name="closed" value="true" />
@@ -632,7 +625,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732690907817</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="ChatHub Fix UserIdClaims 👨🏾‍🦯‍➡️">
+      <option name="closed" value="true" />
+      <created>1732708026310</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1732708026311</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -642,7 +643,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value=".idea" />
     <MESSAGE value="User Model LastOnline Field" />
     <MESSAGE value="LastSeenUpdateMiddleware" />
     <MESSAGE value="ContactService" />
@@ -667,7 +667,8 @@
     <MESSAGE value="ChatHub Refactoring " />
     <MESSAGE value="Workspace ️" />
     <MESSAGE value="Fix Fatal SonarLint Error ⛔️" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix Fatal SonarLint Error ⛔️" />
+    <MESSAGE value="ChatHub Fix UserIdClaims ‍‍➡️" />
+    <option name="LAST_COMMIT_MESSAGE" value="ChatHub Fix UserIdClaims ‍‍➡️" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
