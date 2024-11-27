@@ -8,15 +8,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8470db5d-13fe-41a0-b26d-97bbfa0c93a3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7/storage_v2/_src_/database/railway.Hf4GOg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7/storage_v2/_src_/database/railway.Hf4GOg/schema/public.abK9xQ.meta" afterDir="false" />
+    <list default="true" id="8470db5d-13fe-41a0-b26d-97bbfa0c93a3" name="Changes" comment="Deleted PinnedMessageId1 Row">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Data/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Data/AppDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Eclipse.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Eclipse.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Migrations/20241115104644_Initial.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Migrations/20241115104644_Initial.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Hubs/ChatHub.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Hubs/ChatHub.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Repositories/ChatRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Repositories/ChatRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Repositories/Interfaces/IChatRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Repositories/Interfaces/IChatRepository.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,15 +221,7 @@
       <workItem from="1732505919649" duration="5935000" />
       <workItem from="1732600656404" duration="1007000" />
       <workItem from="1732616796315" duration="335000" />
-      <workItem from="1732683877027" duration="2568000" />
-    </task>
-    <task id="LOCAL-00026" summary="some security fixes + minio storage">
-      <option name="closed" value="true" />
-      <created>1730119453434</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1730119453434</updated>
+      <workItem from="1732683877027" duration="5001000" />
     </task>
     <task id="LOCAL-00027" summary="FileRepository">
       <option name="closed" value="true" />
@@ -619,7 +607,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732511071674</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="Deleted PinnedMessageId1 Row">
+      <option name="closed" value="true" />
+      <created>1732687021385</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1732687021385</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -629,7 +625,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Modern IFormFile Using" />
     <MESSAGE value="Stream Nullable Approving" />
     <MESSAGE value="User Not Found Catching" />
     <MESSAGE value=".gitignore Update" />
@@ -654,7 +649,8 @@
     <MESSAGE value="workspace" />
     <MESSAGE value="DB Changes" />
     <MESSAGE value="Working Chat through WebSockets SignalR " />
-    <option name="LAST_COMMIT_MESSAGE" value="Working Chat through WebSockets SignalR " />
+    <MESSAGE value="Deleted PinnedMessageId1 Row" />
+    <option name="LAST_COMMIT_MESSAGE" value="Deleted PinnedMessageId1 Row" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
