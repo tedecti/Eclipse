@@ -8,13 +8,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8470db5d-13fe-41a0-b26d-97bbfa0c93a3" name="Changes" comment="">
+    <list default="true" id="8470db5d-13fe-41a0-b26d-97bbfa0c93a3" name="Changes" comment="Deleted PinnedMessageId1 Row">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Controllers/ChatController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Controllers/ChatController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Eclipse.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Eclipse.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Eclipse/Hubs/ChatHub.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Hubs/ChatHub.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Eclipse/Repositories/ChatRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Repositories/ChatRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Eclipse/Repositories/Interfaces/IChatRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Repositories/Interfaces/IChatRepository.cs" afterDir="false" />
     </list>
@@ -50,17 +46,14 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/06c046bf69aa4f768c77e50706275b1b26a820/29/8545072a/DbContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/96b22701ce3542d68e66b33c1ae9a14f1e6620/51/902dfd20/RelationalQueryableExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c87d74c82824421bb59de7f19d0486bdc2d800/8e/271a5f0a/UnauthorizedAccessException.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7/storage_v2/_src_/database/railway.Hf4GOg/schema/public.abK9xQ.meta" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Data/AppDbContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Data/AppDbContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Data/AppDbContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Data/AutoMapper.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Middlewares/ErrorHandlingMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Middlewares/ErrorHandlingMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Controllers/ChatController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Hubs/ChatHub.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Migrations/AppDbContextModelSnapshot.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Models/ChatRoom.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Models/Message.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Eclipse/Models/User.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Repositories/ChatRepository.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Repositories/Interfaces/IChatRepository.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -225,38 +218,10 @@
       <workItem from="1731995569331" duration="1051000" />
       <workItem from="1731998452914" duration="199000" />
       <workItem from="1732105352939" duration="2550000" />
-    </task>
-    <task id="LOCAL-00023" summary="REFACTORING">
-      <option name="closed" value="true" />
-      <created>1730088957834</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1730088957834</updated>
-    </task>
-    <task id="LOCAL-00024" summary="UserProfileDto">
-      <option name="closed" value="true" />
-      <created>1730119381728</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1730119381729</updated>
-    </task>
-    <task id="LOCAL-00025" summary="UserService">
-      <option name="closed" value="true" />
-      <created>1730119406289</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1730119406289</updated>
-    </task>
-    <task id="LOCAL-00026" summary="some security fixes + minio storage">
-      <option name="closed" value="true" />
-      <created>1730119453434</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1730119453434</updated>
+      <workItem from="1732505919649" duration="5935000" />
+      <workItem from="1732600656404" duration="1007000" />
+      <workItem from="1732616796315" duration="335000" />
+      <workItem from="1732683877027" duration="5001000" />
     </task>
     <task id="LOCAL-00027" summary="FileRepository">
       <option name="closed" value="true" />
@@ -618,7 +583,39 @@
       <option name="project" value="LOCAL" />
       <updated>1731668704193</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="workspace">
+      <option name="closed" value="true" />
+      <created>1732510978057</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1732510978057</updated>
+    </task>
+    <task id="LOCAL-00073" summary="DB Changes">
+      <option name="closed" value="true" />
+      <created>1732511017870</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1732511017870</updated>
+    </task>
+    <task id="LOCAL-00074" summary="Working Chat through WebSockets SignalR 🔥">
+      <option name="closed" value="true" />
+      <created>1732511071674</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1732511071674</updated>
+    </task>
+    <task id="LOCAL-00075" summary="Deleted PinnedMessageId1 Row">
+      <option name="closed" value="true" />
+      <created>1732687021385</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1732687021385</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -628,10 +625,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="New linter test" />
-    <MESSAGE value="Linter Refactoring" />
-    <MESSAGE value="Linter Settings" />
-    <MESSAGE value="Modern IFormFile Using" />
     <MESSAGE value="Stream Nullable Approving" />
     <MESSAGE value="User Not Found Catching" />
     <MESSAGE value=".gitignore Update" />
@@ -653,7 +646,11 @@
     <MESSAGE value="SignalR" />
     <MESSAGE value="403 Forbidden Catching" />
     <MESSAGE value="Workflow" />
-    <option name="LAST_COMMIT_MESSAGE" value="Workflow" />
+    <MESSAGE value="workspace" />
+    <MESSAGE value="DB Changes" />
+    <MESSAGE value="Working Chat through WebSockets SignalR " />
+    <MESSAGE value="Deleted PinnedMessageId1 Row" />
+    <option name="LAST_COMMIT_MESSAGE" value="Deleted PinnedMessageId1 Row" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

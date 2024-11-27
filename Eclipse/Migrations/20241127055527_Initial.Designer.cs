@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Eclipse.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20241115104644_Initial")]
+    [Migration("20241127055527_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -34,9 +34,6 @@ namespace Eclipse.Migrations
                     b.Property<Guid?>("PinnedMessageId")
                         .HasColumnType("uuid");
 
-                    b.Property<Guid?>("PinnedMessageId1")
-                        .HasColumnType("uuid");
-
                     b.Property<Guid>("UserId1")
                         .HasColumnType("uuid");
 
@@ -45,7 +42,7 @@ namespace Eclipse.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PinnedMessageId1");
+                    b.HasIndex("PinnedMessageId");
 
                     b.HasIndex("UserId1");
 
@@ -149,7 +146,7 @@ namespace Eclipse.Migrations
                     b.Property<string>("ReplyId")
                         .HasColumnType("text");
 
-                    b.Property<Guid?>("SenderId")
+                    b.Property<Guid>("SenderId")
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("Timestamp")
@@ -210,7 +207,8 @@ namespace Eclipse.Migrations
                 {
                     b.HasOne("Eclipse.Models.Message", "PinnedMessage")
                         .WithMany()
-                        .HasForeignKey("PinnedMessageId1");
+                        .HasForeignKey("PinnedMessageId")
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.HasOne("Eclipse.Models.User", "User1")
                         .WithMany()
@@ -280,7 +278,8 @@ namespace Eclipse.Migrations
                     b.HasOne("Eclipse.Models.User", "Sender")
                         .WithMany("Messages")
                         .HasForeignKey("SenderId")
-                        .OnDelete(DeleteBehavior.NoAction);
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
 
                     b.Navigation("ChatRoom");
 

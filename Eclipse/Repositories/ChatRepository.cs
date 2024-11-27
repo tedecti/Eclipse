@@ -25,6 +25,7 @@ public class ChatRepository : IChatRepository
     public async Task<ChatRoom?> GetChatRoomAsync(Guid chatRoomId)
     {
         return await _context.ChatRooms
+            .AsNoTracking()
             .Include(c => c.User1)
             .Include(c => c.User2)
             .FirstOrDefaultAsync(c => c.Id == chatRoomId);
@@ -33,6 +34,7 @@ public class ChatRepository : IChatRepository
     public async Task<Message?> GetMessageAsync(Guid messageId)
     {
         return await _context.Messages
+            .AsNoTracking()
             .Include(m => m.Sender)
             .FirstOrDefaultAsync(m => m.Id == messageId);
     }
@@ -57,19 +59,25 @@ public class ChatRepository : IChatRepository
         }
     }
 
-    public async Task PinMessageAsync(Guid chatRoomId, Guid messageId)
+    public async Task<string> PinMessageAsync(Guid chatRoomId, Guid messageId)
     {
-        var chatRoom = await _context.ChatRooms.FindAsync(chatRoomId);
-        if (chatRoom != null)
-        {
-            chatRoom.PinnedMessageId = messageId;
-            await _context.SaveChangesAsync();
-        }
+        var chatRoom = await _context.ChatRooms.FindAsync(chatRoomId)
+                       ?? throw new NotFoundException("Room");
+
+        var chatMessage = await GetMessageAsync(messageId)
+                          ?? throw new NotFoundException("Message");
+
+        chatRoom.PinnedMessageId = messageId;
+        await _context.SaveChangesAsync();
+
+        return chatMessage.MessageText 
+               ?? throw new InvalidOperationException("Message text is null");
     }
 
     public async Task<List<Message>> GetChatHistoryAsync(Guid chatRoomId, int skip, int take)
     {
         return await _context.Messages
+            .AsNoTracking()
             .Where(m => m.ChatRoomId == chatRoomId)
             .OrderByDescending(m => m.Timestamp)
             .Skip(skip)
@@ -81,6 +89,7 @@ public class ChatRepository : IChatRepository
     public async Task<ChatRoom> CreateOrGetChatRoomAsync(Guid userId1, Guid userId2)
     {
         var existingChatRoom = await _context.ChatRooms
+            .AsNoTracking()
             .FirstOrDefaultAsync(cr =>
                 (cr.UserId1 == userId1 && cr.UserId2 == userId2) ||
                 (cr.UserId1 == userId2 && cr.UserId2 == userId1));
@@ -116,6 +125,7 @@ public class ChatRepository : IChatRepository
     public async Task<IEnumerable<ChatRoom>> GetUserChatRoomsAsync(Guid userId)
     {
         return await _context.ChatRooms
+            .AsNoTracking()
             .Include(cr => cr.User1)
             .Include(cr => cr.User2)
             .Include(cr => cr.Messages.OrderByDescending(m => m.Timestamp).Take(1))
@@ -126,12 +136,14 @@ public class ChatRepository : IChatRepository
     public async Task<bool> ValidateChatRoomAccessAsync(Guid chatRoomId, Guid userId)
     {
         var chatRoom = await _context.ChatRooms
-            .FirstOrDefaultAsync(cr => cr.Id == chatRoomId);
+            .AsNoTracking()
+            .Where(cr => cr.Id == chatRoomId)
+            .Select(cr => new { cr.UserId1, cr.UserId2 })
+            .FirstOrDefaultAsync();
 
         if (chatRoom == null)
             return false;
 
         return chatRoom.UserId1 == userId || chatRoom.UserId2 == userId;
     }
-    
 }

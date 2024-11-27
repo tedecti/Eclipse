@@ -102,8 +102,7 @@ namespace Eclipse.Migrations
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     UserId1 = table.Column<Guid>(type: "uuid", nullable: false),
                     UserId2 = table.Column<Guid>(type: "uuid", nullable: false),
-                    PinnedMessageId = table.Column<Guid>(type: "uuid", nullable: true),
-                    PinnedMessageId1 = table.Column<Guid>(type: "uuid", nullable: true)
+                    PinnedMessageId = table.Column<Guid>(type: "uuid", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -128,7 +127,7 @@ namespace Eclipse.Migrations
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     ChatRoomId = table.Column<Guid>(type: "uuid", nullable: false),
-                    SenderId = table.Column<Guid>(type: "uuid", nullable: true),
+                    SenderId = table.Column<Guid>(type: "uuid", nullable: false),
                     MessageText = table.Column<string>(type: "text", nullable: true),
                     ReactionId = table.Column<string>(type: "text", nullable: true),
                     ReplyId = table.Column<string>(type: "text", nullable: true),
@@ -151,9 +150,9 @@ namespace Eclipse.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_ChatRooms_PinnedMessageId1",
+                name: "IX_ChatRooms_PinnedMessageId",
                 table: "ChatRooms",
-                column: "PinnedMessageId1");
+                column: "PinnedMessageId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ChatRooms_UserId1",
@@ -196,18 +195,19 @@ namespace Eclipse.Migrations
                 column: "SenderId");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_ChatRooms_Messages_PinnedMessageId1",
+                name: "FK_ChatRooms_Messages_PinnedMessageId",
                 table: "ChatRooms",
-                column: "PinnedMessageId1",
+                column: "PinnedMessageId",
                 principalTable: "Messages",
-                principalColumn: "Id");
+                principalColumn: "Id",
+                onDelete: ReferentialAction.SetNull);
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_ChatRooms_Messages_PinnedMessageId1",
+                name: "FK_ChatRooms_Messages_PinnedMessageId",
                 table: "ChatRooms");
 
             migrationBuilder.DropTable(
