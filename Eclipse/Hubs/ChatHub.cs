@@ -1,6 +1,7 @@
 using System.Security.Claims;
 using Eclipse.Exceptions;
 using Eclipse.Models;
+using Eclipse.Models.Dto;
 using Eclipse.Repositories.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;

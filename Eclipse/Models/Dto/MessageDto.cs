@@ -1,4 +1,4 @@
-using Eclipse.Models;
+namespace Eclipse.Models.Dto;
 
 public class MessageDto
 {
