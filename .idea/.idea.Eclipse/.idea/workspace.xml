@@ -8,10 +8,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8470db5d-13fe-41a0-b26d-97bbfa0c93a3" name="Changes" comment="Workspace 🛠️">
+    <list default="true" id="8470db5d-13fe-41a0-b26d-97bbfa0c93a3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7/storage_v2/_src_/database/railway.Hf4GOg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources/30725304-56d3-46dd-a0f3-bd883f7c02e7/storage_v2/_src_/database/railway.Hf4GOg/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Eclipse/Hubs/ChatHub.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Hubs/ChatHub.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Models/Dto/MessageDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Models/Dto/MessageDto.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,26 +30,37 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {}
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "git@github.com:tedecti/Eclipse.git",
-    "accountId": "1689afdb-5a40-44c0-a4d3-2a1ac3b45782"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {}
+}</component>
+  <component name="GitHubPullRequestState">{
+  &quot;prStates&quot;: [
+    {
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDOM8n3AM6DSmkd&quot;,
+        &quot;number&quot;: 4
+      },
+      &quot;lastSeen&quot;: 1732690853536
+    }
+  ]
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:tedecti/Eclipse.git&quot;,
+    &quot;accountId&quot;: &quot;1689afdb-5a40-44c0-a4d3-2a1ac3b45782&quot;
   },
-  "recentNewPullRequestHead": {
-    "server": {
-      "useHttp": false,
-      "host": "github.com",
-      "port": null,
-      "suffix": null
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
     },
-    "owner": "tedecti",
-    "repository": "Eclipse"
+    &quot;owner&quot;: &quot;tedecti&quot;,
+    &quot;repository&quot;: &quot;Eclipse&quot;
   },
-  "editorReviewEnabled": false
-}]]></component>
+  &quot;editorReviewEnabled&quot;: false
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/06c046bf69aa4f768c77e50706275b1b26a820/29/8545072a/DbContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/96b22701ce3542d68e66b33c1ae9a14f1e6620/51/902dfd20/RelationalQueryableExtensions.cs" root0="FORCE_HIGHLIGHTING" />
@@ -71,26 +83,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.Eclipse: http.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "git-widget-placeholder": "dev",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.Eclipse: http.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Eclipse: http">
     <configuration name="Eclipse: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Eclipse/Eclipse.csproj" />
@@ -225,15 +237,8 @@
       <workItem from="1732505919649" duration="5935000" />
       <workItem from="1732600656404" duration="1007000" />
       <workItem from="1732616796315" duration="335000" />
-      <workItem from="1732683877027" duration="6417000" />
-    </task>
-    <task id="LOCAL-00030" summary="FileController">
-      <option name="closed" value="true" />
-      <created>1730119487218</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1730119487218</updated>
+      <workItem from="1732683877027" duration="7107000" />
+      <workItem from="1732706913568" duration="901000" />
     </task>
     <task id="LOCAL-00031" summary="idk????">
       <option name="closed" value="true" />
@@ -619,7 +624,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732689505061</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="Fix Fatal SonarLint Error ⛔️">
+      <option name="closed" value="true" />
+      <created>1732690907817</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1732690907817</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -629,7 +642,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="ContactRepository" />
     <MESSAGE value=".idea" />
     <MESSAGE value="User Model LastOnline Field" />
     <MESSAGE value="LastSeenUpdateMiddleware" />
@@ -654,7 +666,8 @@
     <MESSAGE value="PinMessage Functionality " />
     <MESSAGE value="ChatHub Refactoring " />
     <MESSAGE value="Workspace ️" />
-    <option name="LAST_COMMIT_MESSAGE" value="Workspace ️" />
+    <MESSAGE value="Fix Fatal SonarLint Error ⛔️" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix Fatal SonarLint Error ⛔️" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
