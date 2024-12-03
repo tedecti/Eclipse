@@ -8,11 +8,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8470db5d-13fe-41a0-b26d-97bbfa0c93a3" name="Changes" comment="">
+    <list default="true" id="8470db5d-13fe-41a0-b26d-97bbfa0c93a3" name="Changes" comment="CacheService 🎁">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Controllers/ChatController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Controllers/ChatController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Models/Dto/ChatRoomDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Models/Dto/ChatRoomDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Repositories/ChatRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Repositories/ChatRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eclipse/Repositories/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Repositories/UserRepository.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +19,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DpaMonitoringSettings">
-    <option name="autoShow" value="false" />
+    <option name="firstShow" value="false" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -62,14 +61,12 @@
   &quot;editorReviewEnabled&quot;: false
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/06c046bf69aa4f768c77e50706275b1b26a820/29/8545072a/DbContext.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/96b22701ce3542d68e66b33c1ae9a14f1e6620/51/902dfd20/RelationalQueryableExtensions.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c87d74c82824421bb59de7f19d0486bdc2d800/8e/271a5f0a/UnauthorizedAccessException.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Hubs/ChatHub.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Hubs/ChatHub.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Models/Message.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Eclipse/Models/User.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Repositories/ChatRepository.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Repositories/Interfaces/IChatRepository.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Repositories/UserRepository.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Repositories/UserRepository.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/tedecti/RiderProjects/Eclipse/Eclipse/Repositories/UserRepository.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -87,6 +84,7 @@
   &quot;keyToString&quot;: {
     &quot;.NET Launch Settings Profile.Eclipse: http.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -94,7 +92,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.C#&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -239,39 +237,12 @@
       <workItem from="1732616796315" duration="335000" />
       <workItem from="1732683877027" duration="7107000" />
       <workItem from="1732706913568" duration="1250000" />
-      <workItem from="1732715673149" duration="909000" />
-    </task>
-    <task id="LOCAL-00032" summary="FileController DI fix">
-      <option name="closed" value="true" />
-      <created>1730120225526</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1730120225526</updated>
-    </task>
-    <task id="LOCAL-00033" summary="changed route">
-      <option name="closed" value="true" />
-      <created>1730120240811</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1730120240811</updated>
-    </task>
-    <task id="LOCAL-00034" summary="changed route (/api/file)">
-      <option name="closed" value="true" />
-      <created>1730120257402</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1730120257402</updated>
-    </task>
-    <task id="LOCAL-00035" summary="Temporary removed unknown exception handler">
-      <option name="closed" value="true" />
-      <created>1730120288539</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1730120288539</updated>
+      <workItem from="1732715673149" duration="1075000" />
+      <workItem from="1732815375454" duration="4000" />
+      <workItem from="1733140521501" duration="48000" />
+      <workItem from="1733196694936" duration="1670000" />
+      <workItem from="1733198505437" duration="2757000" />
+      <workItem from="1733210434152" duration="5981000" />
     </task>
     <task id="LOCAL-00036" summary="workspace">
       <option name="closed" value="true" />
@@ -633,7 +604,39 @@
       <option name="project" value="LOCAL" />
       <updated>1732708026311</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="ChatList Fix">
+      <option name="closed" value="true" />
+      <created>1732716588424</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1732716588425</updated>
+    </task>
+    <task id="LOCAL-00082" summary="MessageText necessarily field 💬">
+      <option name="closed" value="true" />
+      <created>1733219206538</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1733219206538</updated>
+    </task>
+    <task id="LOCAL-00083" summary="Real-time ChatHub Update">
+      <option name="closed" value="true" />
+      <created>1733219343735</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1733219343735</updated>
+    </task>
+    <task id="LOCAL-00084" summary="CacheService 🎁">
+      <option name="closed" value="true" />
+      <created>1733219389393</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1733219389393</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -643,10 +646,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="User Model LastOnline Field" />
-    <MESSAGE value="LastSeenUpdateMiddleware" />
-    <MESSAGE value="ContactService" />
-    <MESSAGE value="Use Middleware + Scope For ContactService" />
     <MESSAGE value="ContactRepository Update For Sorting" />
     <MESSAGE value="LastSeen Field Update" />
     <MESSAGE value="Workspace" />
@@ -668,7 +667,11 @@
     <MESSAGE value="Workspace ️" />
     <MESSAGE value="Fix Fatal SonarLint Error ⛔️" />
     <MESSAGE value="ChatHub Fix UserIdClaims ‍‍➡️" />
-    <option name="LAST_COMMIT_MESSAGE" value="ChatHub Fix UserIdClaims ‍‍➡️" />
+    <MESSAGE value="ChatList Fix" />
+    <MESSAGE value="MessageText necessarily field " />
+    <MESSAGE value="Real-time ChatHub Update" />
+    <MESSAGE value="CacheService " />
+    <option name="LAST_COMMIT_MESSAGE" value="CacheService " />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
