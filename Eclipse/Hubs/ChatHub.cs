@@ -67,9 +67,10 @@ public class ChatHub : Hub
             await _chatRepository.SaveMessageAsync(message);
 
             var messageDto = MessageDto.FromMessage(message);
-
+            
             await Task.WhenAll(
-                Clients.User(recipientId.ToString()).SendAsync("NewMessage", messageDto),
+                Clients.Group(chatRoomId.ToString()).SendAsync("NewMessage", messageDto),
+                Clients.Group($"user_{recipientId}").SendAsync("NewMessage", messageDto),
                 Task.Run(() => _logger.LogInformation(
                     "Sent message {MessageId} in chat {ChatRoomId} from user {SenderId} to user {RecipientId}",
                     message.Id, chatRoomId, senderId, recipientId))
@@ -251,12 +252,29 @@ public class ChatHub : Hub
             if (chatRoom == null)
                 throw new InvalidOperationException("Could not create or retrieve chat room");
 
-            await Task.WhenAll(
-                Groups.AddToGroupAsync(connectionId, chatRoom.Id.ToString()),
-                NotifyOtherUserOfConnection(chatRoom, currentUserId)
-            );
+            // Add connection to SignalR group for the chat room
+            await Groups.AddToGroupAsync(connectionId, chatRoom.Id.ToString());
 
-            _logger.LogInformation("User {UserId} connected to chat room {ChatRoomId}", currentUserId, chatRoom.Id);
+            // Subscribe to user-specific group
+            await Groups.AddToGroupAsync(connectionId, $"user_{currentUserId}");
+
+            // Load recent unread messages
+            var unreadMessages = await _chatRepository.GetChatHistoryAsync(chatRoom.Id, 0, MaxMessagesFetch);
+            var unreadMessageDtos = unreadMessages
+                .Where(m => !m.IsRead && m.SenderId != currentUserId)
+                .Select(MessageDto.FromMessage)
+                .ToList();
+
+            if (unreadMessageDtos.Any())
+            {
+                await Clients.Client(connectionId).SendAsync("LoadUnreadMessages", unreadMessageDtos);
+            }
+
+            await NotifyOtherUserOfConnection(chatRoom, currentUserId);
+
+            _logger.LogInformation(
+                "User {UserId} connected to chat room {ChatRoomId} with connection {ConnectionId}",
+                currentUserId, chatRoom.Id, connectionId);
         }
         catch (Exception ex)
         {
@@ -264,6 +282,7 @@ public class ChatHub : Hub
             Context.Abort();
         }
     }
+
 
     public override async Task OnDisconnectedAsync(Exception? exception)
     {
@@ -273,7 +292,7 @@ public class ChatHub : Hub
         try
         {
             var httpContext = Context.GetHttpContext();
-            
+
             var secondUserIdStr = httpContext?.Request.Query["secondUserId"].FirstOrDefault();
 
             if (string.IsNullOrEmpty(secondUserIdStr) ||
@@ -285,9 +304,11 @@ public class ChatHub : Hub
             }
 
             var chatRoom = await _chatRepository.CreateOrGetChatRoomAsync(currentUserId, secondUserId);
-            
+
+            // Remove from both room-specific and user-specific groups
             await Task.WhenAll(
                 Groups.RemoveFromGroupAsync(connectionId, chatRoom.Id.ToString()),
+                Groups.RemoveFromGroupAsync(connectionId, $"user_{currentUserId}"),
                 NotifyOtherUserOfDisconnection(chatRoom, currentUserId)
             );
 
@@ -324,29 +345,42 @@ public class ChatHub : Hub
         {
             if (string.IsNullOrWhiteSpace(chatRoomId))
                 throw new ArgumentException("ChatRoomId cannot be null or empty", nameof(chatRoomId));
-            
+
             if (!Guid.TryParse(chatRoomId, out Guid parsedChatRoomId))
                 throw new ArgumentException("Invalid chat room ID format", nameof(chatRoomId));
 
             var userId = GetCurrentUserId();
             var chatRoom = await _chatRepository.GetChatRoomAsync(parsedChatRoomId);
-            
+
             if (chatRoom == null ||
                 (chatRoom.UserId1 != userId && chatRoom.UserId2 != userId))
                 throw new UnauthorizedAccessException("User is not authorized to join this chat room");
-            
-            await Task.WhenAll(
-                Groups.AddToGroupAsync(Context.ConnectionId, chatRoomId),
-                Clients.Group(chatRoomId).SendAsync("UserJoined", new
-                {
-                    UserId = userId,
-                    Context.ConnectionId,
-                    ChatRoomId = chatRoomId,
-                    Timestamp = DateTime.UtcNow
-                }),
-                Task.Run(() => _logger.LogInformation(
-                    "User {UserId} joined chat room {ChatRoomId}", userId, chatRoomId))
-            );
+
+            // Add to chat room group
+            await Groups.AddToGroupAsync(Context.ConnectionId, chatRoomId);
+
+            // Get any messages sent while disconnected
+            var missedMessages = await _chatRepository.GetChatHistoryAsync(parsedChatRoomId, 0, MaxMessagesFetch);
+            var missedMessageDtos = missedMessages
+                .Where(m => !m.IsRead && m.SenderId != userId)
+                .Select(MessageDto.FromMessage)
+                .ToList();
+
+            if (missedMessageDtos.Any())
+            {
+                await Clients.Caller.SendAsync("LoadMissedMessages", missedMessageDtos);
+            }
+
+            await Clients.Group(chatRoomId).SendAsync("UserJoined", new
+            {
+                UserId = userId,
+                Context.ConnectionId,
+                ChatRoomId = chatRoomId,
+                Timestamp = DateTime.UtcNow
+            });
+
+            _logger.LogInformation(
+                "User {UserId} joined chat room {ChatRoomId}", userId, chatRoomId);
         }
         catch (Exception ex)
         {
