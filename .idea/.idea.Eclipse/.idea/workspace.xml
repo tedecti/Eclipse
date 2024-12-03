@@ -8,10 +8,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8470db5d-13fe-41a0-b26d-97bbfa0c93a3" name="Changes" comment="CacheService 🎁">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Eclipse/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eclipse/Repositories/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Repositories/UserRepository.cs" afterDir="false" />
+    <list default="true" id="8470db5d-13fe-41a0-b26d-97bbfa0c93a3" name="Changes" comment="Workspace 🛠️">
+      <change beforePath="$PROJECT_DIR$/Eclipse/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Eclipse/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,23 +240,7 @@
       <workItem from="1733140521501" duration="48000" />
       <workItem from="1733196694936" duration="1670000" />
       <workItem from="1733198505437" duration="2757000" />
-      <workItem from="1733210434152" duration="5981000" />
-    </task>
-    <task id="LOCAL-00036" summary="workspace">
-      <option name="closed" value="true" />
-      <created>1730120298231</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1730120298231</updated>
-    </task>
-    <task id="LOCAL-00037" summary="CORS Policy">
-      <option name="closed" value="true" />
-      <created>1730177798934</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1730177798934</updated>
+      <workItem from="1733210434152" duration="6230000" />
     </task>
     <task id="LOCAL-00038" summary="User Edit through ExecuteUpdate">
       <option name="closed" value="true" />
@@ -636,7 +618,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733219389393</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="Using CacheService for UserRepository ✨">
+      <option name="closed" value="true" />
+      <created>1733219587135</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1733219587135</updated>
+    </task>
+    <task id="LOCAL-00086" summary="Workspace 🛠️">
+      <option name="closed" value="true" />
+      <created>1733219610758</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1733219610758</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -646,8 +644,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="ContactRepository Update For Sorting" />
-    <MESSAGE value="LastSeen Field Update" />
     <MESSAGE value="Workspace" />
     <MESSAGE value="Contact Dto For Short Information" />
     <MESSAGE value="New Migrations" />
@@ -671,7 +667,9 @@
     <MESSAGE value="MessageText necessarily field " />
     <MESSAGE value="Real-time ChatHub Update" />
     <MESSAGE value="CacheService " />
-    <option name="LAST_COMMIT_MESSAGE" value="CacheService " />
+    <MESSAGE value="Using CacheService for UserRepository ✨" />
+    <MESSAGE value="Workspace ️" />
+    <option name="LAST_COMMIT_MESSAGE" value="Workspace ️" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
