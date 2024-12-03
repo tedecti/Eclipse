@@ -29,7 +29,9 @@ public class Program
         builder.Services.AddScoped<IContactRepository, ContactRepository>();
         builder.Services.AddScoped<IContactService, ContactService>();
         builder.Services.AddScoped<IChatRepository, ChatRepository>();
-        
+        builder.Services.AddScoped<ICacheService, CacheService>();
+
+        builder.Services.AddMemoryCache();
         builder.Services.AddControllers();
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();

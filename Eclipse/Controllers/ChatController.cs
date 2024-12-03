@@ -47,13 +47,29 @@ public class ChatRoomController : ControllerBase
         var chatRoomDtos = chatRooms.Select(cr => new ChatRoomDto
         {
             Id = cr.Id,
-            OtherUser = cr.UserId1 == currentUserId ? new UserDtoForChats(cr.User2) : new UserDtoForChats(cr.User1),
-            LastMessage = cr.Messages.FirstOrDefault(),
+            OtherUser = cr.UserId1 == currentUserId
+                ? new UserDtoForChats(cr.User2)
+                : new UserDtoForChats(cr.User1),
+            LastMessage = cr.Messages
+                .OrderByDescending(m => m.Timestamp)
+                .Select(m => new MessageDto
+                {
+                    Id = m.Id,
+                    MessageText = m.MessageText,
+                    Timestamp = m.Timestamp.ToLongDateString(),
+                    SenderId = m.SenderId
+                })
+                .FirstOrDefault(),
             UnreadCount = cr.Messages.Count(m => !m.IsRead && m.SenderId != currentUserId)
         });
 
-        return new ApiResponse<IEnumerable<ChatRoomDto>> { Message = "Success", Data = chatRoomDtos };
+        return new ApiResponse<IEnumerable<ChatRoomDto>>
+        {
+            Message = "Success",
+            Data = chatRoomDtos
+        };
     }
+
 
     [HttpGet("{chatRoomId}")]
     public async Task<ApiResponse<ChatRoom>> GetChatRoom(Guid chatRoomId)
