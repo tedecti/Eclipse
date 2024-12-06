@@ -14,14 +14,12 @@ namespace Eclipse.Hubs;
 public class ChatHub : Hub
 {
     private readonly IChatRepository _chatRepository;
-    private readonly ILogger<ChatHub> _logger;
     private const int MaxMessagesFetch = 50;
     private const int DefaultMessagesFetch = 20;
 
-    public ChatHub(IChatRepository chatRepository, ILogger<ChatHub> logger)
+    public ChatHub(IChatRepository chatRepository)
     {
         _chatRepository = chatRepository;
-        _logger = logger;
     }
 
     private Guid GetCurrentUserId()
@@ -70,15 +68,11 @@ public class ChatHub : Hub
             
             await Task.WhenAll(
                 Clients.Group(chatRoomId.ToString()).SendAsync("NewMessage", messageDto),
-                Clients.Group($"user_{recipientId}").SendAsync("NewMessage", messageDto),
-                Task.Run(() => _logger.LogInformation(
-                    "Sent message {MessageId} in chat {ChatRoomId} from user {SenderId} to user {RecipientId}",
-                    message.Id, chatRoomId, senderId, recipientId))
+                Clients.Group($"user_{recipientId}").SendAsync("NewMessage", messageDto)
             );
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Error sending message in chat room {ChatRoomId}", chatRoomId);
             throw new HubException("Failed to send message", ex);
         }
     }
@@ -99,14 +93,10 @@ public class ChatHub : Hub
             var messages = await _chatRepository.GetChatHistoryAsync(chatRoomId, skip, take);
             var messageDtos = messages.Select(MessageDto.FromMessage).ToList();
 
-            _logger.LogInformation("Retrieved {MessageCount} messages for chat room {ChatRoomId}",
-                messageDtos.Count, chatRoomId);
-
             return messageDtos;
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Error retrieving chat history for room {ChatRoomId}", chatRoomId);
             throw new HubException($"Failed to get chat history: {ex.Message}");
         }
     }
@@ -126,9 +116,6 @@ public class ChatHub : Hub
         {
             throw new UnauthorizedAccessException("User is not part of the chat room.");
         }
-
-        _logger.LogInformation("Message {MessageId} in chat room {ChatRoomId} was received by user {UserId}",
-            messageId, chatRoomId, userId);
 
         await Clients.User(message.SenderId.ToString()).SendAsync("MessageReceived", new
         {
@@ -154,7 +141,6 @@ public class ChatHub : Hub
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Error marking message {MessageId} as read", messageId);
             throw new HubException("Failed to mark message as read");
         }
     }
@@ -184,15 +170,11 @@ public class ChatHub : Hub
                         ReactionId = reactionId,
                         UserId = userId,
                         Timestamp = DateTime.UtcNow
-                    }),
-                Task.Run(() => _logger.LogInformation(
-                    "Reaction {ReactionId} added to message {MessageId} by user {UserId}",
-                    reactionId, messageId, userId))
+                    })
             );
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Error adding reaction to message {MessageId}", messageId);
             throw new HubException("Failed to add reaction", ex);
         }
     }
@@ -214,24 +196,17 @@ public class ChatHub : Hub
 
             await _chatRepository.PinMessageAsync(chatRoomId, messageId);
 
-            await Task.WhenAll(
-                Clients.Users(new[] { chatRoom.UserId1.ToString(), chatRoom.UserId2.ToString() })
+            await Clients.Users(new[] { chatRoom.UserId1.ToString(), chatRoom.UserId2.ToString() })
                     .SendAsync("MessagePinned", new
                     {
                         ChatRoomId = chatRoomId,
                         MessageId = messageId,
                         PinnedBy = userId,
                         Timestamp = DateTime.UtcNow
-                    }),
-                Task.Run(() => _logger.LogInformation(
-                    "Message {MessageId} pinned in chat room {ChatRoomId} by user {UserId}",
-                    messageId, chatRoomId, userId))
-            );
+                    });
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Error pinning message {MessageId} in chat room {ChatRoomId}",
-                messageId, chatRoomId);
             throw new HubException("Failed to pin message", ex);
         }
     }
@@ -251,35 +226,28 @@ public class ChatHub : Hub
 
             if (chatRoom == null)
                 throw new InvalidOperationException("Could not create or retrieve chat room");
-
-            // Add connection to SignalR group for the chat room
+            
             await Groups.AddToGroupAsync(connectionId, chatRoom.Id.ToString());
-
-            // Subscribe to user-specific group
+            
             await Groups.AddToGroupAsync(connectionId, $"user_{currentUserId}");
-
-            // Load recent unread messages
+            
             var unreadMessages = await _chatRepository.GetChatHistoryAsync(chatRoom.Id, 0, MaxMessagesFetch);
             var unreadMessageDtos = unreadMessages
                 .Where(m => !m.IsRead && m.SenderId != currentUserId)
                 .Select(MessageDto.FromMessage)
                 .ToList();
 
-            if (unreadMessageDtos.Any())
+            if (unreadMessageDtos.Count != 0)
             {
                 await Clients.Client(connectionId).SendAsync("LoadUnreadMessages", unreadMessageDtos);
             }
 
             await NotifyOtherUserOfConnection(chatRoom, currentUserId);
-
-            _logger.LogInformation(
-                "User {UserId} connected to chat room {ChatRoomId} with connection {ConnectionId}",
-                currentUserId, chatRoom.Id, connectionId);
         }
-        catch (Exception ex)
+        catch (Exception)
         {
-            _logger.LogError(ex, "Connection error for connection ID {ConnectionId}", connectionId);
             Context.Abort();
+            throw;
         }
     }
 
@@ -298,28 +266,17 @@ public class ChatHub : Hub
             if (string.IsNullOrEmpty(secondUserIdStr) ||
                 !Guid.TryParse(secondUserIdStr, out Guid secondUserId))
             {
-                _logger.LogWarning("No valid second user ID found during disconnection");
                 await base.OnDisconnectedAsync(exception);
                 return;
             }
 
             var chatRoom = await _chatRepository.CreateOrGetChatRoomAsync(currentUserId, secondUserId);
-
-            // Remove from both room-specific and user-specific groups
+            
             await Task.WhenAll(
                 Groups.RemoveFromGroupAsync(connectionId, chatRoom.Id.ToString()),
                 Groups.RemoveFromGroupAsync(connectionId, $"user_{currentUserId}"),
                 NotifyOtherUserOfDisconnection(chatRoom, currentUserId)
             );
-
-            _logger.LogInformation("User {UserId} disconnected from chat room {ChatRoomId}",
-                currentUserId, chatRoom.Id);
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex,
-                "Error during disconnection for user {UserId} with connection ID {ConnectionId}",
-                currentUserId, connectionId);
         }
         finally
         {
@@ -355,11 +312,9 @@ public class ChatHub : Hub
             if (chatRoom == null ||
                 (chatRoom.UserId1 != userId && chatRoom.UserId2 != userId))
                 throw new UnauthorizedAccessException("User is not authorized to join this chat room");
-
-            // Add to chat room group
+            
             await Groups.AddToGroupAsync(Context.ConnectionId, chatRoomId);
-
-            // Get any messages sent while disconnected
+            
             var missedMessages = await _chatRepository.GetChatHistoryAsync(parsedChatRoomId, 0, MaxMessagesFetch);
             var missedMessageDtos = missedMessages
                 .Where(m => !m.IsRead && m.SenderId != userId)
@@ -378,13 +333,10 @@ public class ChatHub : Hub
                 ChatRoomId = chatRoomId,
                 Timestamp = DateTime.UtcNow
             });
-
-            _logger.LogInformation(
-                "User {UserId} joined chat room {ChatRoomId}", userId, chatRoomId);
+            
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Error joining chat room {ChatRoomId}", chatRoomId);
             throw new HubException("Failed to join chat room", ex);
         }
     }
