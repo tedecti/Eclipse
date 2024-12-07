@@ -30,6 +30,8 @@ public class Program
         builder.Services.AddScoped<IContactService, ContactService>();
         builder.Services.AddScoped<IChatRepository, ChatRepository>();
         builder.Services.AddScoped<ICacheService, CacheService>();
+        builder.Services.AddScoped<ISearchRepository, SearchRepository>();
+        builder.Services.AddScoped<ISearchService, SearchService>();
 
         builder.Services.AddMemoryCache();
         builder.Services.AddControllers();
