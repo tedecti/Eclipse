@@ -1,6 +1,7 @@
 using Eclipse.Middlewares;
 using Eclipse.Models.Dto;
 using Eclipse.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Eclipse.Controllers;
@@ -16,6 +17,7 @@ public class SearchController : ControllerBase
         _searchService = searchService;
     }
 
+    [Authorize]
     [HttpGet("search")]
     public async Task<ApiResponse<List<UserProfileDto>>> Search([FromQuery] string query)
     {
