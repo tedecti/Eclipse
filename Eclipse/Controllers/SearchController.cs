@@ -19,7 +19,11 @@ public class SearchController : ControllerBase
     [HttpGet("search")]
     public async Task<ApiResponse<List<UserProfileDto>>> Search([FromQuery] string query)
     {
-        var response = await _searchService.Search(query);
+        var userIdClaim = User.FindFirst("UserId");
+        if (userIdClaim is { Value: null }) throw new UnauthorizedAccessException();
+
+        var userId = Guid.Parse(userIdClaim.Value);
+        var response = await _searchService.Search(query, userId);
         return new ApiResponse<List<UserProfileDto>> { Message = "Success", Data = response };
     }
 }

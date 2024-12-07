@@ -16,9 +16,9 @@ public class SearchService : ISearchService
         _mapper = mapper;
     }
 
-    public async Task<List<UserProfileDto>> Search(string query)
+    public async Task<List<UserProfileDto>> Search(string query, Guid currentUserId)
     {
-        var result = await _searchRepository.GetUserProfileInSearch(query);
+        var result = await _searchRepository.GetUserProfileInSearch(query, currentUserId);
         return _mapper.Map<List<UserProfileDto>>(result);
     }
 }

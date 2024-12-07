@@ -4,5 +4,5 @@ namespace Eclipse.Services.Interfaces;
 
 public interface ISearchService
 {
-    Task<List<UserProfileDto>> Search(string query);
+    Task<List<UserProfileDto>> Search(string query, Guid currentUserId);
 }

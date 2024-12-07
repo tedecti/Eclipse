@@ -15,17 +15,18 @@ public class SearchRepository : ISearchRepository
         _context = context;
     }
 
-    public async Task<IEnumerable<User>> GetUserProfileInSearch(string query)
+    public async Task<IEnumerable<User>> GetUserProfileInSearch(string query, Guid currentUserId)
     {
         var lowercaseQuery = query.ToLower();
-    
+
         var searchResult = await _context.Users
             .Where(u => 
-                EF.Functions.Like(u.Username.ToLower(), $"%{lowercaseQuery}%") ||
-                EF.Functions.Like(u.Email.ToLower(), $"%{lowercaseQuery}%") ||
-                EF.Functions.Like(u.Phone, $"%{query}%"))
+                u.Id != currentUserId && // Exclude current user
+                (EF.Functions.Like(u.Username.ToLower(), $"%{lowercaseQuery}%") ||
+                 EF.Functions.Like(u.Email.ToLower(), $"%{lowercaseQuery}%") ||
+                 EF.Functions.Like(u.Phone, $"%{query}%")))
             .ToListAsync();
-    
+
         return searchResult;
     }
 }
