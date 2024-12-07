@@ -79,7 +79,7 @@ public class ChatRepository : IChatRepository
         return await _context.Messages
             .AsNoTracking()
             .Where(m => m.ChatRoomId == chatRoomId)
-            .OrderByDescending(m => m.Timestamp)
+            .OrderBy(m => m.Timestamp)
             .Skip(skip)
             .Take(take)
             .Include(m => m.Sender)
