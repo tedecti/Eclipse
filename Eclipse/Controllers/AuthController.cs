@@ -32,9 +32,9 @@ public class AuthController : ControllerBase
 
     [HttpPost]
     [Route("signin")]
-    public async Task<ApiResponse<object>> Login(UserDto userDto)
+    public async Task<ApiResponse<object>> Login(UserAuthDto userAuthDto)
     {
-        var token = await _authRepository.Login(userDto);
+        var token = await _authRepository.Login(userAuthDto);
         if (token == null) throw new NotFoundException("User");
         return new ApiResponse<object> { Message = "Success", Data = new { token } };
     }

@@ -8,7 +8,7 @@ public class AutoMapper : Profile
 {
     public AutoMapper()
     {
-        CreateMap<User, UserDto>();
+        CreateMap<User, UserAuthDto>();
         CreateMap<User, RegisterDto>();
         CreateMap<User, UserInfoDto>();
         CreateMap<User, UserProfileDto>();

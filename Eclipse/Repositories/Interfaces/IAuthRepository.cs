@@ -6,6 +6,6 @@ namespace Eclipse.Repositories.Interfaces;
 public interface IAuthRepository
 {
     Task<User> Register(RegisterDto registerDto);
-    Task<string?> Login(UserDto userDto);
+    Task<string?> Login(UserAuthDto userAuthDto);
     string GenerateJwtToken(User user);
 }

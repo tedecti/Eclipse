@@ -50,12 +50,12 @@ public class AuthRepository : IAuthRepository
         return newUser;
     }
 
-    public async Task<string?> Login(UserDto userDto)
+    public async Task<string?> Login(UserAuthDto userAuthDto)
     {
-        if (string.IsNullOrEmpty(userDto.Email) || string.IsNullOrEmpty(userDto.Password)) return null;
+        if (string.IsNullOrEmpty(userAuthDto.Email) || string.IsNullOrEmpty(userAuthDto.Password)) return null;
 
-        var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == userDto.Email);
-        if (user == null || !BCrypt.Net.BCrypt.Verify(userDto.Password, user.Password)) return null;
+        var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == userAuthDto.Email);
+        if (user == null || !BCrypt.Net.BCrypt.Verify(userAuthDto.Password, user.Password)) return null;
 
         return await Task.FromResult(GenerateJwtToken(user));
     }
