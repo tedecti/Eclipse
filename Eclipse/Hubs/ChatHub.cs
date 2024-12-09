@@ -14,12 +14,14 @@ namespace Eclipse.Hubs;
 public class ChatHub : Hub
 {
     private readonly IChatRepository _chatRepository;
+    private readonly IUserRepository _userRepository;
     private const int MaxMessagesFetch = 50;
     private const int DefaultMessagesFetch = 20;
 
-    public ChatHub(IChatRepository chatRepository)
+    public ChatHub(IChatRepository chatRepository, IUserRepository userRepository)
     {
         _chatRepository = chatRepository;
+        _userRepository = userRepository;
     }
 
     private Guid GetCurrentUserId()
@@ -50,12 +52,21 @@ public class ChatHub : Hub
                 throw new NotFoundException("Room");
 
             var recipientId = chatRoom.UserId1 == senderId ? chatRoom.UserId2 : chatRoom.UserId1;
-            
+        
             string replyText = null;
+            UserDtoForChats replyingSender = null;
             if (!string.IsNullOrEmpty(replyId))
             {
                 var replyMessage = await _chatRepository.GetMessageAsync(Guid.Parse(replyId));
-                replyText = replyMessage?.MessageText;
+                if (replyMessage != null)
+                {
+                    replyText = replyMessage.MessageText;
+                    var replySender = await _userRepository.GetUserById(replyMessage.SenderId);
+                    if (replySender != null)
+                    {
+                        replyingSender = new UserDtoForChats(replySender);
+                    }
+                }
             }
 
             var message = new Message
@@ -73,6 +84,7 @@ public class ChatHub : Hub
 
             var messageDto = MessageDto.FromMessage(message);
             messageDto.ReplyText = replyText;
+            messageDto.ReplyingSender = replyingSender; // Добавляем информацию об отправителе
 
             await Clients.Group(chatRoomId.ToString()).SendAsync("NewMessage", messageDto);
         }

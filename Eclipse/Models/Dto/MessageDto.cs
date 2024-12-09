@@ -1,4 +1,5 @@
-namespace Eclipse.Models.Dto;
+using Eclipse.Models;
+using Eclipse.Models.Dto;
 
 public class MessageDto
 {
@@ -8,8 +9,9 @@ public class MessageDto
     public string MessageText { get; set; }
     public string ReplyId { get; set; }
     public string ReplyText { get; set; }
+    public UserDtoForChats ReplyingSender { get; set; } // Новое свойство
     public bool IsRead { get; set; }
-    public string Timestamp { get; set; } // ISO 8601 string format
+    public string Timestamp { get; set; }
 
     public static MessageDto FromMessage(Message message)
     {
@@ -21,7 +23,7 @@ public class MessageDto
             MessageText = message.MessageText,
             ReplyId = message.ReplyId,
             IsRead = message.IsRead,
-            Timestamp = message.Timestamp.ToString("o") // ISO 8601 format
+            Timestamp = message.Timestamp.ToString("o")
         };
     }
 }
