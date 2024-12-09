@@ -14,12 +14,14 @@ namespace Eclipse.Hubs;
 public class ChatHub : Hub
 {
     private readonly IChatRepository _chatRepository;
+    private readonly IUserRepository _userRepository;
     private const int MaxMessagesFetch = 50;
     private const int DefaultMessagesFetch = 20;
 
-    public ChatHub(IChatRepository chatRepository)
+    public ChatHub(IChatRepository chatRepository, IUserRepository userRepository)
     {
         _chatRepository = chatRepository;
+        _userRepository = userRepository;
     }
 
     private Guid GetCurrentUserId()
@@ -50,12 +52,21 @@ public class ChatHub : Hub
                 throw new NotFoundException("Room");
 
             var recipientId = chatRoom.UserId1 == senderId ? chatRoom.UserId2 : chatRoom.UserId1;
-            
+
             string replyText = null;
+            UserDtoForChats replyingSender = null;
             if (!string.IsNullOrEmpty(replyId))
             {
                 var replyMessage = await _chatRepository.GetMessageAsync(Guid.Parse(replyId));
-                replyText = replyMessage?.MessageText;
+                if (replyMessage != null)
+                {
+                    replyText = replyMessage.MessageText;
+                    var replySender = await _userRepository.GetUserById(replyMessage.SenderId);
+                    if (replySender != null)
+                    {
+                        replyingSender = new UserDtoForChats(replySender);
+                    }
+                }
             }
 
             var message = new Message
@@ -73,6 +84,7 @@ public class ChatHub : Hub
 
             var messageDto = MessageDto.FromMessage(message);
             messageDto.ReplyText = replyText;
+            messageDto.ReplyingSender = replyingSender; // Добавляем информацию об отправителе
 
             await Clients.Group(chatRoomId.ToString()).SendAsync("NewMessage", messageDto);
         }
@@ -96,7 +108,28 @@ public class ChatHub : Hub
             take = Math.Min(take, MaxMessagesFetch);
 
             var messages = await _chatRepository.GetChatHistoryAsync(chatRoomId, skip, take);
-            var messageDtos = messages.Select(MessageDto.FromMessage).ToList();
+            var messageDtos = new List<MessageDto>();
+
+            foreach (var message in messages)
+            {
+                var messageDto = MessageDto.FromMessage(message);
+
+                if (!string.IsNullOrEmpty(message.ReplyId))
+                {
+                    var replyMessage = await _chatRepository.GetMessageAsync(Guid.Parse(message.ReplyId));
+                    if (replyMessage != null)
+                    {
+                        messageDto.ReplyText = replyMessage.MessageText;
+                        var replySender = await _userRepository.GetUserById(replyMessage.SenderId);
+                        if (replySender != null)
+                        {
+                            messageDto.ReplyingSender = new UserDtoForChats(replySender);
+                        }
+                    }
+                }
+
+                messageDtos.Add(messageDto);
+            }
 
             return messageDtos;
         }
@@ -202,13 +235,13 @@ public class ChatHub : Hub
             await _chatRepository.PinMessageAsync(chatRoomId, messageId);
 
             await Clients.Users(new[] { chatRoom.UserId1.ToString(), chatRoom.UserId2.ToString() })
-                    .SendAsync("MessagePinned", new
-                    {
-                        ChatRoomId = chatRoomId,
-                        MessageId = messageId,
-                        PinnedBy = userId,
-                        Timestamp = DateTime.UtcNow
-                    });
+                .SendAsync("MessagePinned", new
+                {
+                    ChatRoomId = chatRoomId,
+                    MessageId = messageId,
+                    PinnedBy = userId,
+                    Timestamp = DateTime.UtcNow
+                });
         }
         catch (Exception ex)
         {
@@ -231,11 +264,11 @@ public class ChatHub : Hub
 
             if (chatRoom == null)
                 throw new InvalidOperationException("Could not create or retrieve chat room");
-            
+
             await Groups.AddToGroupAsync(connectionId, chatRoom.Id.ToString());
-            
+
             await Groups.AddToGroupAsync(connectionId, $"user_{currentUserId}");
-            
+
             var unreadMessages = await _chatRepository.GetChatHistoryAsync(chatRoom.Id, 0, MaxMessagesFetch);
             var unreadMessageDtos = unreadMessages
                 .Where(m => !m.IsRead && m.SenderId != currentUserId)
@@ -276,7 +309,7 @@ public class ChatHub : Hub
             }
 
             var chatRoom = await _chatRepository.CreateOrGetChatRoomAsync(currentUserId, secondUserId);
-            
+
             await Task.WhenAll(
                 Groups.RemoveFromGroupAsync(connectionId, chatRoom.Id.ToString()),
                 Groups.RemoveFromGroupAsync(connectionId, $"user_{currentUserId}"),
@@ -317,9 +350,9 @@ public class ChatHub : Hub
             if (chatRoom == null ||
                 (chatRoom.UserId1 != userId && chatRoom.UserId2 != userId))
                 throw new UnauthorizedAccessException("User is not authorized to join this chat room");
-            
+
             await Groups.AddToGroupAsync(Context.ConnectionId, chatRoomId);
-            
+
             var missedMessages = await _chatRepository.GetChatHistoryAsync(parsedChatRoomId, 0, MaxMessagesFetch);
             var missedMessageDtos = missedMessages
                 .Where(m => !m.IsRead && m.SenderId != userId)
@@ -338,7 +371,6 @@ public class ChatHub : Hub
                 ChatRoomId = chatRoomId,
                 Timestamp = DateTime.UtcNow
             });
-            
         }
         catch (Exception ex)
         {
