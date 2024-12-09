@@ -7,6 +7,7 @@ public class MessageDto
     public Guid SenderId { get; set; }
     public string MessageText { get; set; }
     public string ReplyId { get; set; }
+    public string ReplyText { get; set; }
     public bool IsRead { get; set; }
     public string Timestamp { get; set; } // ISO 8601 string format
 

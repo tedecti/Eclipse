@@ -50,6 +50,13 @@ public class ChatHub : Hub
                 throw new NotFoundException("Room");
 
             var recipientId = chatRoom.UserId1 == senderId ? chatRoom.UserId2 : chatRoom.UserId1;
+            
+            string replyText = null;
+            if (!string.IsNullOrEmpty(replyId))
+            {
+                var replyMessage = await _chatRepository.GetMessageAsync(Guid.Parse(replyId));
+                replyText = replyMessage?.MessageText;
+            }
 
             var message = new Message
             {
@@ -65,10 +72,9 @@ public class ChatHub : Hub
             await _chatRepository.SaveMessageAsync(message);
 
             var messageDto = MessageDto.FromMessage(message);
-            
-            await Task.WhenAll(
-                Clients.Group(chatRoomId.ToString()).SendAsync("NewMessage", messageDto)
-            );
+            messageDto.ReplyText = replyText;
+
+            await Clients.Group(chatRoomId.ToString()).SendAsync("NewMessage", messageDto);
         }
         catch (Exception ex)
         {
