@@ -52,7 +52,6 @@ public class ChatHub : Hub
                 throw new NotFoundException("Room");
 
             var recipientId = chatRoom.UserId1 == senderId ? chatRoom.UserId2 : chatRoom.UserId1;
-
             string replyText = null;
             UserDtoForChats replyingSender = null;
             if (!string.IsNullOrEmpty(replyId))
