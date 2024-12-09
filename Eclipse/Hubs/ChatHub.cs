@@ -67,8 +67,7 @@ public class ChatHub : Hub
             var messageDto = MessageDto.FromMessage(message);
             
             await Task.WhenAll(
-                Clients.Group(chatRoomId.ToString()).SendAsync("NewMessage", messageDto),
-                Clients.Group($"user_{recipientId}").SendAsync("NewMessage", messageDto)
+                Clients.Group(chatRoomId.ToString()).SendAsync("NewMessage", messageDto)
             );
         }
         catch (Exception ex)
