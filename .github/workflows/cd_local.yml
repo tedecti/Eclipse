@@ -1,21 +1,26 @@
-name: Local CD
+name: CD
 
 on:
   push:
-    branches: [ master ]
+    branches:
+      - master
 
 jobs:
   deploy:
-    runs-on: self-hosted   # <--- ключевое!
+    runs-on: self-hosted
+
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Build
+      - name: Install .NET SDK
         run: |
-          dotnet publish Eclipse/Eclipse.csproj -c Release -o ./publish
+          sudo pacman -S --noconfirm dotnet-sdk
 
-      - name: Restart app
+      - name: Build and Publish
         run: |
-          pkill -f "dotnet Eclipse.dll" || true
-          nohup dotnet ./publish/Eclipse.dll > app.log 2>&1 &
+          dotnet publish ./Eclipse/Eclipse.csproj -c Release -o /home/tedecti/eclipse
+
+      - name: Restart Service
+        run: |
+          sudo systemctl restart eclipse.service
