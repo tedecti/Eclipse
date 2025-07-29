@@ -11,35 +11,18 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - name: Download Artifact
+      - name: Download artifact
         uses: actions/download-artifact@v4
         with:
           name: eclipse-app
-          path: /home/tedecti/eclipse-app
+          path: ./deploy
 
-      - name: Create systemd service
+      - name: Restart application
         run: |
-          SERVICE_FILE=/etc/systemd/system/eclipse.service
-          sudo bash -c "cat > $SERVICE_FILE" <<EOL
-          [Unit]
-          Description=Eclipse App
-          After=network.target
+          echo "Stopping old app if running..."
+          pkill -f "dotnet Eclipse.dll" || echo "No process found"
 
-          [Service]
-          ExecStart=/usr/bin/dotnet /home/tedecti/eclipse-app/Eclipse.dll
-          WorkingDirectory=/home/tedecti/eclipse-app
-          Restart=always
-          User=tedecti
-
-          [Install]
-          WantedBy=multi-user.target
-          EOL
-
-          sudo systemctl daemon-reload
-          sudo systemctl enable eclipse
-          sudo systemctl restart eclipse
-
-      - name: Check app health
-        run: |
-          sleep 5
-          curl -I http://localhost:8080 || echo "App not responding"
+          echo "Starting new app..."
+          cd ./deploy
+          nohup dotnet Eclipse.dll > app.log 2>&1 &
+          echo "App started. Logs: ./deploy/app.log"
