@@ -1,4 +1,4 @@
-name: CD
+name: CD_remote
 
 on:
   push:
@@ -32,7 +32,7 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
-            cd /home/${{ secrets.VPS_USER }}/eclipse
+            cd /home/tedecti/eclipse
 
             git pull || echo "Repo not found, skip git pull"
 
