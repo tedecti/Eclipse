@@ -1,26 +1,45 @@
 name: CD
 
 on:
-  push:
-    branches:
-      - master
+  workflow_run:
+    workflows: ["CI"]
+    types:
+      - completed
 
 jobs:
   deploy:
     runs-on: self-hosted
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - name: Download Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: eclipse-app
+          path: /home/tedecti/eclipse-app
 
-      - name: Install .NET SDK
+      - name: Create systemd service
         run: |
-          sudo pacman -S --noconfirm dotnet-sdk
+          SERVICE_FILE=/etc/systemd/system/eclipse.service
+          sudo bash -c "cat > $SERVICE_FILE" <<EOL
+          [Unit]
+          Description=Eclipse App
+          After=network.target
 
-      - name: Build and Publish
-        run: |
-          dotnet publish ./Eclipse/Eclipse.csproj -c Release -o /home/tedecti/eclipse
+          [Service]
+          ExecStart=/usr/bin/dotnet /home/tedecti/eclipse-app/Eclipse.dll
+          WorkingDirectory=/home/tedecti/eclipse-app
+          Restart=always
+          User=tedecti
 
-      - name: Restart Service
+          [Install]
+          WantedBy=multi-user.target
+          EOL
+
+          sudo systemctl daemon-reload
+          sudo systemctl enable eclipse
+          sudo systemctl restart eclipse
+
+      - name: Check app health
         run: |
-          sudo systemctl restart eclipse.service
+          sleep 5
+          curl -I http://localhost:8080 || echo "App not responding"
