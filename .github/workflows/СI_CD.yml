@@ -1,0 +1,33 @@
+name: CI-CD
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - run: dotnet publish ./Eclipse/Eclipse.csproj -c Release -o ./publish /p:UseAppHost=false
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eclipse-app
+          path: ./publish
+
+  deploy:
+    needs: build
+    runs-on: self-hosted
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: eclipse-app
+          path: ./deploy
+      - name: Run app
+        run: |
+          pkill -f "dotnet Eclipse.dll" || true
+          cd ./deploy
+          nohup dotnet Eclipse.dll > app.log 2>&1 &
