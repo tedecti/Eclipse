@@ -29,7 +29,3 @@ jobs:
         run: |
           docker run -d -p 8080:8080 --name eclipse tedecti/eclipse:latest
           docker ps
-
-      - name: Keep job alive
-        run: |
-          sleep 21600
