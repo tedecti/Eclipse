@@ -2,11 +2,13 @@ name: CD
 
 on:
   push:
-    branches: [ master ]
+    branches:
+      - master
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -18,10 +20,10 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker image
-        run: docker build -t tedecti/eclipse:latest ./Eclipse
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/eclipse:latest ./Eclipse
 
       - name: Push Docker image
-        run: docker push tedecti/eclipse:latest
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/eclipse:latest
 
       - name: Deploy on VPS
         uses: appleboy/ssh-action@v1.0.3
@@ -30,6 +32,13 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
-            cd /path/to/your/project
+            cd /home/${{ secrets.VPS_USER }}/eclipse
+
+            # Обновляем docker-compose.yml (если есть изменения)
+            git pull || echo "Repo not found, skip git pull"
+
+            # Обновляем образ
             docker-compose pull
+
+            # Перезапускаем контейнер
             docker-compose up -d
