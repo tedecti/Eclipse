@@ -10,10 +10,10 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 ENV DOTNET_CONFIGURATION=$BUILD_CONFIGURATION
 WORKDIR /src
-COPY ["Eclipse/Eclipse.csproj", "Eclipse/"]
-RUN dotnet restore "Eclipse/Eclipse.csproj"
+COPY ["Eclipse.csproj", "."]
+RUN dotnet restore "Eclipse.csproj"
 COPY . .
-WORKDIR "/src/Eclipse"
+WORKDIR /src
 RUN dotnet build "Eclipse.csproj" -c $DOTNET_CONFIGURATION -o /app/build
 
 FROM build AS publish
