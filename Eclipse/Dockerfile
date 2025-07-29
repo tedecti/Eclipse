@@ -8,12 +8,13 @@ EXPOSE 8081
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
+ENV DOTNET_CONFIGURATION=$BUILD_CONFIGURATION
 WORKDIR /src
-COPY ["Eclipse.csproj", "."]
-RUN dotnet restore "Eclipse.csproj"
+COPY ["Eclipse/Eclipse.csproj", "Eclipse/"]
+RUN dotnet restore "Eclipse/Eclipse.csproj"
 COPY . .
 WORKDIR "/src/Eclipse"
-RUN dotnet build "Eclipse.csproj" -c $BUILD_CONFIGURATION -o /app/build
+RUN dotnet build "Eclipse.csproj" -c $DOTNET_CONFIGURATION -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
