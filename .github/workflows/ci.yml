@@ -7,8 +7,6 @@ on:
     branches: [ master ]
 
 jobs:
-  deploy:
-    runs-on: self-hosted
   build:
     runs-on: ubuntu-latest
     env:
@@ -24,10 +22,16 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore ./Eclipse/Eclipse.csproj
 
       - name: Build
-        run: dotnet build --configuration $BUILD_CONFIGURATION --no-restore
+        run: dotnet build ./Eclipse/Eclipse.csproj --configuration $BUILD_CONFIGURATION --no-restore
 
       - name: Publish
         run: dotnet publish ./Eclipse/Eclipse.csproj -c $BUILD_CONFIGURATION -o ./publish /p:UseAppHost=false
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: eclipse-app
+          path: ./publish
