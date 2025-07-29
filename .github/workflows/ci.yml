@@ -9,6 +9,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      BUILD_CONFIGURATION: Release
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -22,7 +25,7 @@ jobs:
         run: dotnet restore
 
       - name: Build
-        run: dotnet build --configuration Release --no-restore
+        run: dotnet build --configuration $BUILD_CONFIGURATION --no-restore
 
       - name: Publish
-        run: dotnet publish "Eclipse.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+        run: dotnet publish ./Eclipse/Eclipse.csproj -c $BUILD_CONFIGURATION -o ./publish /p:UseAppHost=false
