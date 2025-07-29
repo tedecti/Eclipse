@@ -1,5 +1,7 @@
 ﻿FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
-USER $APP_UID
+ARG APP_UID=1000
+RUN adduser --disabled-password --gecos "" --uid $APP_UID appuser
+USER appuser
 WORKDIR /app
 EXPOSE 8080
 EXPOSE 8081
@@ -7,8 +9,8 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["Eclipse.csproj", "."]
-RUN dotnet restore "Eclipse.csproj"
+COPY ["Eclipse/Eclipse.csproj", "Eclipse/"]
+RUN dotnet restore "Eclipse/Eclipse.csproj"
 COPY . .
 WORKDIR "/src/Eclipse"
 RUN dotnet build "Eclipse.csproj" -c $BUILD_CONFIGURATION -o /app/build
