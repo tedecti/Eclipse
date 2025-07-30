@@ -123,5 +123,6 @@ public class Program
         app.MapHub<ChatHub>("/chatHub");
         
         app.Run();
+        
     }
 }
