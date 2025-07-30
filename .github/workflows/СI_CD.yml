@@ -46,15 +46,15 @@ jobs:
       - name: Deploy and restart with Supervisor
         run: |
           echo "Stopping ASP.NET Core app..."
-          supervisorctl stop aspnet || true
+          sudo supervisorctl stop aspnet || true
 
           echo "Deploying new files..."
-          rm -rf /cloudclusters/default_site/bin/release/net5.0/*
-          cp -r ./deploy/* /cloudclusters/default_site/bin/release/net5.0/
-          chown -R $USER:$USER /cloudclusters/default_site/bin/release/net5.0
+          sudo rm -rf /cloudclusters/default_site/bin/release/net5.0/*
+          sudo cp -r ./deploy/* /cloudclusters/default_site/bin/release/net5.0/
+          sudo chown -R $USER:$USER /cloudclusters/default_site/bin/release/net5.0
 
           echo "Starting ASP.NET Core app..."
-          supervisorctl start aspnet
+          sudo supervisorctl start aspnet
 
           echo "Checking status..."
-          supervisorctl status aspnet
+          sudo supervisorctl status aspnet
