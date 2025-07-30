@@ -38,4 +38,13 @@ public class AuthController : ControllerBase
         if (token == null) throw new NotFoundException("User");
         return new ApiResponse<object> { Message = "Success", Data = new { token } };
     }
+    
+    [HttpPost]
+    [Route("xdd")]
+    public async Task<ApiResponse<object>> xdd(UserDto userDto)
+    {
+        var token = await _authRepository.Login(userDto);
+        if (token == null) throw new NotFoundException("User");
+        return new ApiResponse<object> { Message = "Success", Data = new { token } };
+    }
 }

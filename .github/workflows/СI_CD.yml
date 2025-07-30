@@ -1,8 +1,12 @@
 name: CI-CD
 
 on:
-  push:
-    branches: [ master ]
+  pull_request:
+    branches:
+      - develop
+  push: 
+    branches:
+      - master
 
 jobs:
   build:
@@ -18,8 +22,12 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore ./Eclipse/Eclipse.csproj
 
-      - name: Publish
-        run: dotnet publish ./Eclipse/Eclipse.csproj -c Release -o ./publish /p:UseAppHost=false
+      - name: Publish project
+        run: |
+          dotnet publish ./Eclipse/Eclipse.csproj \
+            -c Release \
+            -o ./publish \
+            /p:UseAppHost=false
 
       - uses: actions/upload-artifact@v4
         with:
@@ -35,18 +43,18 @@ jobs:
           name: eclipse-app
           path: ./deploy
 
-      - name: Deploy and restart service
+      - name: Deploy and restart with Supervisor
         run: |
-          echo "Stopping service..."
-          sudo systemctl stop eclipse.service
+          echo "Stopping ASP.NET Core app..."
+          sudo supervisorctl stop aspnet || true
 
           echo "Deploying new files..."
-          sudo rm -rf /home/tedecti/eclipse/*
-          sudo cp -r ./deploy/* /home/tedecti/eclipse/
-          sudo chown -R tedecti:tedecti /home/tedecti/eclipse
+          sudo rm -rf /cloudclusters/default_site/bin/release/net5.0/*
+          sudo cp -r ./deploy/* /cloudclusters/default_site/bin/release/net5.0/
+          sudo chown -R $USER:$USER /cloudclusters/default_site/bin/release/net5.0
 
-          echo "Starting service..."
-          sudo systemctl start eclipse.service
+          echo "Starting ASP.NET Core app..."
+          sudo supervisorctl start aspnet
 
-          echo "Service status:"
-          sudo systemctl status eclipse.service --no-pager
+          echo "Checking status..."
+          sudo supervisorctl status aspnet
